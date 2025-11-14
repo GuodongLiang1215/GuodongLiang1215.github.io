@@ -1,0 +1,3201 @@
+<html lang="zh-CN" data-theme="business"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页 - 山门初启 | 崂山仙境</title>
+    <link href="./assets/static/uxbot/daisyui@5.css" rel="stylesheet" type="text/css">
+    <script src="./assets/static/uxbot/tailwind-browser@4.js"></script>
+    <link href="./assets/static/uxbot/daisyui-themes.css" rel="stylesheet" type="text/css">
+    <script src="./assets/3/3.1.1/iconify.min.js"></script>
+    <style>
+/* DaisyUI Theme Variables Customization for OracleNet - Laoshan Theme */
+:root {
+/* Laoshan Mystic Color Palette - Dark Theme Base */
+--color-primary: rgba(218, 165, 32, 1); /* 仙侠金 - Daoist Gold */
+--color-primary-content: rgba(18, 18, 18, 1); /* 墨色 - Deep Ink */
+--color-secondary: rgba(85, 107, 47, 1); /* 松花绿 - Pine Green */
+--color-secondary-content: rgba(245, 245, 245, 1); /* 宣纸白 */
+--color-accent: rgba(178, 34, 34, 1); /* 丹砂朱 - Cinnabar Red */
+--color-accent-content: rgba(245, 245, 245, 1);
+
+/* Deep Gray Material Design Dark Theme Levels */
+--color-base-100: rgba(18, 18, 18, 1); /* MD #121212 - Deepest background */
+--color-base-200: rgba(30, 30, 30, 1); /* MD #1E1E1E - Card/surface background */
+--color-base-300: rgba(44, 44, 44, 1); /* MD #2C2C2C - Raised surface */
+--color-base-content: rgba(245, 245, 245, 1); /* 宣纸白/月白 - Main text */
+
+--color-neutral: rgba(38, 38, 38, 1); /* 黛青 - Neutral components */
+--color-neutral-content: rgba(176, 176, 176, 1); /* Secondary text */
+
+/* Semantic colors adjusted for dark theme */
+--color-info: rgba(59, 130, 246, 1);
+--color-info-content: rgba(255, 255, 255, 1);
+--color-success: rgba(34, 197, 94, 1);
+--color-success-content: rgba(255, 255, 255, 1);
+--color-warning: rgba(251, 191, 36, 1);
+--color-warning-content: rgba(0, 0, 0, 1);
+--color-error: rgba(248, 113, 113, 1);
+--color-error-content: rgba(255, 255, 255, 1);
+
+/* Border radius for ancient scroll aesthetic */
+--radius-box: 0.5rem; /* 8px for containers */
+--radius-field: 0.25rem; /* 4px for inputs */
+--radius-selector: 0.375rem; /* 6px for buttons */
+
+--border: 1px;
+}
+
+/* Global Laoshan-themed component styles */
+.transition-width {
+transition: width 0.3s ease-in-out;
+}
+
+.nav-hover {
+transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.shadow-ancient {
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(218, 165, 32, 0.1);
+}
+
+.shadow-scroll {
+box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(218, 165, 32, 0.2);
+}
+
+/* Header height consistency */
+.header-height {
+height: 72px;
+}
+
+/* Sidebar dimensions */
+.sidebar-expanded {
+width: 280px;
+}
+
+.sidebar-collapsed {
+width: 80px;
+}
+
+/* Ancient scroll paper texture effect */
+.paper-texture {
+background: linear-gradient(45deg, var(--color-base-200) 0%, rgba(245, 245, 245, 0.05) 50%, var(--color-base-200) 100%);
+position: relative;
+}
+
+.paper-texture::before {
+content: &#39;&#39;;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-image: 
+radial-gradient(circle at 20% 30%, rgba(218, 165, 32, 0.1) 1px, transparent 1px),
+radial-gradient(circle at 70% 80%, rgba(85, 107, 47, 0.08) 1px, transparent 1px);
+background-size: 40px 40px, 60px 60px;
+pointer-events: none;
+}
+
+/* Mystic glow effects */
+.mystic-glow {
+box-shadow: 0 0 20px rgba(218, 165, 32, 0.3);
+transition: box-shadow 0.3s ease-in-out;
+}
+
+.mystic-glow:hover {
+box-shadow: 0 0 30px rgba(218, 165, 32, 0.5);
+}
+
+/* Focus styles for accessibility with Daoist theme */
+.focus-primary:focus {
+outline: 2px solid var(--color-primary);
+outline-offset: 2px;
+box-shadow: 0 0 10px rgba(218, 165, 32, 0.4);
+}
+
+/* Typography for ancient aesthetic */
+.font-ancient {
+font-family: &#39;Cormorant Garamond&#39;, serif;
+letter-spacing: 0.05em;
+}
+
+.text-ancient-gold {
+color: var(--color-primary);
+text-shadow: 0 0 8px rgba(218, 165, 32, 0.3);
+}
+
+/* Scroll-like container styling */
+.ancient-container {
+background: var(--color-base-200);
+border: 1px solid rgba(218, 165, 32, 0.3);
+border-radius: var(--radius-box);
+position: relative;
+}
+
+.ancient-container::before {
+content: &#39;&#39;;
+position: absolute;
+top: -2px;
+left: -2px;
+right: -2px;
+bottom: -2px;
+background: linear-gradient(45deg, transparent, rgba(218, 165, 32, 0.2), transparent);
+border-radius: var(--radius-box);
+z-index: -1;
+}
+</style> <style>
+/* Home page specific styles for enhanced mystical experience */
+
+/* Video background optimization */
+#home_hero_section video {
+    filter: brightness(0.7) contrast(1.1);
+}
+
+/* Enhanced ancient font styling */
+@import url(&#39;https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;display=swap&#39;);
+
+.font-ancient {
+    font-family: &#39;Cormorant Garamond&#39;, serif;
+    letter-spacing: 0.05em;
+}
+
+/* Enhanced mystic glow effects for home page */
+.mystic-glow {
+    box-shadow: 0 0 20px rgba(218, 165, 32, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.mystic-glow:hover {
+    box-shadow: 0 0 40px rgba(218, 165, 32, 0.6), 0 0 60px rgba(218, 165, 32, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Ancient gold text with enhanced glow */
+.text-ancient-gold {
+    color: var(--color-primary);
+    text-shadow: 
+        0 0 10px rgba(218, 165, 32, 0.5),
+        0 0 20px rgba(218, 165, 32, 0.3),
+        0 0 30px rgba(218, 165, 32, 0.2);
+}
+
+/* Enhanced scroll card styling */
+.shadow-scroll {
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(218, 165, 32, 0.2),
+        0 0 0 1px rgba(218, 165, 32, 0.1);
+    border-radius: var(--radius-box);
+    background: linear-gradient(135deg, var(--color-base-100) 0%, rgba(218, 165, 32, 0.05) 100%);
+}
+
+.shadow-scroll:hover {
+    box-shadow: 
+        0 8px 30px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(218, 165, 32, 0.3),
+        0 0 0 2px rgba(218, 165, 32, 0.2),
+        0 0 20px rgba(218, 165, 32, 0.3);
+}
+
+/* Enhanced ancient container styling */
+.ancient-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.ancient-container::before {
+    content: &#39;&#39;;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+        45deg, 
+        transparent 30%, 
+        rgba(218, 165, 32, 0.3) 50%, 
+        transparent 70%
+    );
+    border-radius: var(--radius-box);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.ancient-container:hover::before {
+    opacity: 1;
+}
+
+/* Paper texture enhancement for sections */
+.paper-texture {
+    background: 
+        linear-gradient(45deg, var(--color-base-200) 0%, rgba(245, 245, 245, 0.03) 50%, var(--color-base-200) 100%),
+        radial-gradient(circle at 20% 30%, rgba(218, 165, 32, 0.08) 1px, transparent 1px),
+        radial-gradient(circle at 70% 80%, rgba(85, 107, 47, 0.06) 1px, transparent 1px);
+    background-size: 100% 100%, 60px 60px, 80px 80px;
+}
+
+/* Hero section specific enhancements */
+#home_hero_section {
+    background: radial-gradient(ellipse at center, rgba(218, 165, 32, 0.1) 0%, transparent 70%);
+}
+
+#home_hero_section h1 {
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% {
+        text-shadow: 
+            0 0 10px rgba(218, 165, 32, 0.5),
+            0 0 20px rgba(218, 165, 32, 0.3),
+            0 0 30px rgba(218, 165, 32, 0.2);
+    }
+    100% {
+        text-shadow: 
+            0 0 15px rgba(218, 165, 32, 0.7),
+            0 0 25px rgba(218, 165, 32, 0.4),
+            0 0 35px rgba(218, 165, 32, 0.3);
+    }
+}
+
+/* Button hover enhancements */
+.btn:hover {
+    transform: translateY(-1px) scale(1.02);
+    transition: all 0.2s ease-out;
+}
+
+/* Card hover animations */
+.card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    transform: translateY(-4px) scale(1.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #home_hero_section h1 {
+        font-size: 3rem;
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Enhanced focus states for accessibility */
+.btn:focus,
+.card:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    box-shadow: 0 0 15px rgba(218, 165, 32, 0.5);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading state for video */
+#home_hero_section video {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#home_hero_section video.loaded {
+    opacity: 1;
+}
+
+/* 书籍展示区域特定样式 */
+#value_proposition_section .btn {
+    position: relative;
+    overflow: hidden;
+}
+
+#value_proposition_section .btn::before {
+    content: &#39;&#39;;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+#value_proposition_section .btn:hover::before {
+    left: 100%;
+}
+
+/* 推荐榜单项目悬停效果 */
+#value_proposition_section .space-y-4 > div {
+    position: relative;
+    overflow: hidden;
+}
+
+#value_proposition_section .space-y-4 > div::after {
+    content: &#39;&#39;;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(218, 165, 32, 0.1), transparent);
+    transition: left 0.3s ease;
+}
+
+#value_proposition_section .space-y-4 > div:hover::after {
+    left: 100%;
+}
+
+/* 图片展示框增强效果 */
+#value_proposition_section img {
+    filter: brightness(0.9) contrast(1.1);
+    transition: all 0.3s ease;
+}
+
+#value_proposition_section img:hover {
+    filter: brightness(1) contrast(1.2);
+}
+
+/* 分类按钮特殊效果 */
+#value_proposition_section .space-y-3 .btn {
+    border-width: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#value_proposition_section .space-y-3 .btn:hover {
+    border-width: 3px;
+    box-shadow: 0 0 20px currentColor;
+}
+
+/* 排行榜数字样式增强 */
+#value_proposition_section .w-12.h-16 {
+    background: linear-gradient(135deg, currentColor, rgba(255, 255, 255, 0.1));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    font-family: &#39;Cormorant Garamond&#39;, serif;
+    font-weight: 700;
+}
+</style>
+<style>
+#iovyhz.spark-custom-iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/7bf2ed79-d041-43fc-9573-cf465d57470b.png");
+  background-size: cover;
+}
+
+.iovyhz.spark-custom-iovyhz#iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/94c6a7d6-78c9-41fe-a3e5-1f978f8099ef.jpg");
+  background-position-x: 50%;
+  background-position-y: 0%;
+  background-size: cover;
+}
+
+</style>
+<style>
+#iovyhz.spark-custom-iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/7bf2ed79-d041-43fc-9573-cf465d57470b.png");
+  background-size: cover;
+}
+
+.iovyhz.spark-custom-iovyhz#iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/94c6a7d6-78c9-41fe-a3e5-1f978f8099ef.jpg");
+  background-position-x: 50%;
+  background-position-y: 0%;
+  background-size: cover;
+}
+
+</style>
+<style>
+#iovyhz.spark-custom-iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/7bf2ed79-d041-43fc-9573-cf465d57470b.png");
+  background-size: cover;
+}
+
+.iovyhz.spark-custom-iovyhz#iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/94c6a7d6-78c9-41fe-a3e5-1f978f8099ef.jpg");
+  background-position-x: 50%;
+  background-position-y: 0%;
+  background-size: cover;
+}
+
+</style>
+<style>
+#iovyhz.spark-custom-iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/7bf2ed79-d041-43fc-9573-cf465d57470b.png");
+  background-size: cover;
+}
+
+.iovyhz.spark-custom-iovyhz#iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/94c6a7d6-78c9-41fe-a3e5-1f978f8099ef.jpg");
+  background-position-x: 50%;
+  background-position-y: 0%;
+  background-size: cover;
+}
+
+</style>
+<style>
+#iovyhz.spark-custom-iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/7bf2ed79-d041-43fc-9573-cf465d57470b.png");
+  background-size: cover;
+}
+
+.iovyhz.spark-custom-iovyhz#iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/94c6a7d6-78c9-41fe-a3e5-1f978f8099ef.jpg");
+  background-position-x: 50%;
+  background-position-y: 0%;
+  background-size: cover;
+}
+
+.value_proposition_section.spark-custom-value_proposition_section#value_proposition_section {
+  background-attachment: scroll;
+  background-color: rgba(0, 0, 0, 0.95);
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/24/4018daf0-ff2b-4ec5-9307-727d50d6e473.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+</style>
+<style>
+#iovyhz.spark-custom-iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/7bf2ed79-d041-43fc-9573-cf465d57470b.png");
+  background-size: cover;
+}
+
+.iovyhz.spark-custom-iovyhz#iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/94c6a7d6-78c9-41fe-a3e5-1f978f8099ef.jpg");
+  background-position-x: 50%;
+  background-position-y: 0%;
+  background-size: cover;
+}
+
+.value_proposition_section.spark-custom-value_proposition_section#value_proposition_section {
+  background-attachment: scroll;
+  background-color: rgba(0, 0, 0, 0.95);
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/24/4018daf0-ff2b-4ec5-9307-727d50d6e473.png");
+  background-position-x: center;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+</style>
+<style>
+#iovyhz.spark-custom-iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/7bf2ed79-d041-43fc-9573-cf465d57470b.png");
+  background-size: cover;
+}
+
+.iovyhz.spark-custom-iovyhz#iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/94c6a7d6-78c9-41fe-a3e5-1f978f8099ef.jpg");
+  background-position-x: 50%;
+  background-position-y: 0%;
+  background-size: cover;
+}
+
+.value_proposition_section.spark-custom-value_proposition_section#value_proposition_section {
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.53);
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/24/3988797e-09f2-453a-a50e-5e3c18f0686c.jpg");
+  background-position-x: 50%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+
+</style>
+<style>
+#iovyhz.spark-custom-iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/7bf2ed79-d041-43fc-9573-cf465d57470b.png");
+  background-size: cover;
+}
+
+.iovyhz.spark-custom-iovyhz#iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/94c6a7d6-78c9-41fe-a3e5-1f978f8099ef.jpg");
+  background-position-x: 50%;
+  background-position-y: 0%;
+  background-size: cover;
+}
+
+.value_proposition_section.spark-custom-value_proposition_section#value_proposition_section {
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.53);
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/24/3988797e-09f2-453a-a50e-5e3c18f0686c.jpg");
+  background-position-x: 50%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+
+</style>
+<style>
+#iovyhz.spark-custom-iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/7bf2ed79-d041-43fc-9573-cf465d57470b.png");
+  background-size: cover;
+}
+
+.iovyhz.spark-custom-iovyhz#iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/94c6a7d6-78c9-41fe-a3e5-1f978f8099ef.jpg");
+  background-position-x: 50%;
+  background-position-y: 0%;
+  background-size: cover;
+}
+
+.value_proposition_section.spark-custom-value_proposition_section#value_proposition_section {
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.53);
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/24/3988797e-09f2-453a-a50e-5e3c18f0686c.jpg");
+  background-position-x: 50%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+
+</style>
+<style>
+#iovyhz.spark-custom-iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/7bf2ed79-d041-43fc-9573-cf465d57470b.png");
+  background-size: cover;
+}
+
+.iovyhz.spark-custom-iovyhz#iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/94c6a7d6-78c9-41fe-a3e5-1f978f8099ef.jpg");
+  background-position-x: 50%;
+  background-position-y: 0%;
+  background-size: cover;
+}
+
+.value_proposition_section.spark-custom-value_proposition_section#value_proposition_section {
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.53);
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/24/3988797e-09f2-453a-a50e-5e3c18f0686c.jpg");
+  background-position-x: 50%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+
+</style>
+<style>
+#iovyhz.spark-custom-iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/7bf2ed79-d041-43fc-9573-cf465d57470b.png");
+  background-size: cover;
+}
+
+.iovyhz.spark-custom-iovyhz#iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/94c6a7d6-78c9-41fe-a3e5-1f978f8099ef.jpg");
+  background-position-x: 50%;
+  background-position-y: 0%;
+  background-size: cover;
+}
+
+.value_proposition_section.spark-custom-value_proposition_section#value_proposition_section {
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.53);
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/24/3988797e-09f2-453a-a50e-5e3c18f0686c.jpg");
+  background-position-x: 50%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+
+</style>
+<style>
+#iovyhz.spark-custom-iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/7bf2ed79-d041-43fc-9573-cf465d57470b.png");
+  background-size: cover;
+}
+
+.iovyhz.spark-custom-iovyhz#iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/94c6a7d6-78c9-41fe-a3e5-1f978f8099ef.jpg");
+  background-position-x: 50%;
+  background-position-y: 0%;
+  background-size: cover;
+}
+
+.value_proposition_section.spark-custom-value_proposition_section#value_proposition_section {
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.53);
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/24/3988797e-09f2-453a-a50e-5e3c18f0686c.jpg");
+  background-position-x: 50%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+
+</style>
+<style>
+#iovyhz.spark-custom-iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/7bf2ed79-d041-43fc-9573-cf465d57470b.png");
+  background-size: cover;
+}
+
+.iovyhz.spark-custom-iovyhz#iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/94c6a7d6-78c9-41fe-a3e5-1f978f8099ef.jpg");
+  background-position-x: 50%;
+  background-position-y: 0%;
+  background-size: cover;
+}
+
+.value_proposition_section.spark-custom-value_proposition_section#value_proposition_section {
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.53);
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/24/3988797e-09f2-453a-a50e-5e3c18f0686c.jpg");
+  background-position-x: 50%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+
+</style>
+<style>
+#iovyhz.spark-custom-iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/7bf2ed79-d041-43fc-9573-cf465d57470b.png");
+  background-size: cover;
+}
+
+.iovyhz.spark-custom-iovyhz#iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/94c6a7d6-78c9-41fe-a3e5-1f978f8099ef.jpg");
+  background-position-x: 50%;
+  background-position-y: 0%;
+  background-size: cover;
+}
+
+.value_proposition_section.spark-custom-value_proposition_section#value_proposition_section {
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.53);
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/24/3988797e-09f2-453a-a50e-5e3c18f0686c.jpg");
+  background-position-x: 50%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+
+</style>
+<style>
+#iovyhz.spark-custom-iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/7bf2ed79-d041-43fc-9573-cf465d57470b.png");
+  background-size: cover;
+}
+
+.iovyhz.spark-custom-iovyhz#iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/94c6a7d6-78c9-41fe-a3e5-1f978f8099ef.jpg");
+  background-position-x: 50%;
+  background-position-y: 0%;
+  background-size: cover;
+}
+
+.value_proposition_section.spark-custom-value_proposition_section#value_proposition_section {
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.53);
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/24/3988797e-09f2-453a-a50e-5e3c18f0686c.jpg");
+  background-position-x: 50%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+
+</style>
+  <script src="./assets/static/uxbot/25_6/holder.js"></script><style>
+#iovyhz.spark-custom-iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/7bf2ed79-d041-43fc-9573-cf465d57470b.png");
+  background-size: cover;
+}
+
+.iovyhz.spark-custom-iovyhz#iovyhz {
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/22/94c6a7d6-78c9-41fe-a3e5-1f978f8099ef.jpg");
+  background-position-x: 50%;
+  background-position-y: 0%;
+  background-size: cover;
+}
+
+.value_proposition_section.spark-custom-value_proposition_section#value_proposition_section {
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.53);
+  background-image: url("https://spark-builder.s3.cn-north-1.amazonaws.com.cn/user-image/2025/10/24/3988797e-09f2-453a-a50e-5e3c18f0686c.jpg");
+  background-position-x: 50%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 1;
+}
+
+</style></head>
+  <body class="bg-base-100 min-h-screen">
+    <div class="header-wrapper fixed top-0 left-0 right-0 z-50">
+      <div data-section-id="common_header" data-section-type="common_header">
+  <div class="navbar bg-base-100 shadow-ancient border-b border-primary/20 header-height px-6 paper-texture">
+    <!-- Left section: Menu toggle and Brand -->
+    <div class="navbar-start">
+      <button aria-label="切换侧边栏" class="btn btn-ghost btn-circle focus-primary mystic-glow" onclick="toggleSidebar()">
+        <span class="iconify text-primary" data-icon="heroicons:bars-3" data-width="24"></span>
+      </button>
+      <div class="flex items-center ml-4">
+        <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center border border-primary/30 mystic-glow">
+          <span class="iconify text-primary" data-icon="heroicons:sparkles" data-width="24"></span>
+        </div>
+        <div class="ml-3 hidden lg:block">
+          <span class="text-2xl font-ancient text-ancient-gold">OracleNet</span>
+          <div class="text-xs text-base-content/70 font-ancient">崂山玄境</div>
+        </div>
+      </div>
+    </div>
+    <!-- Center section: Main navigation -->
+    <div class="navbar-center hidden xl:flex">
+      <ul id="ig4ug" class="menu menu-horizontal px-1 gap-2 ig4ug spark-custom-ig4ug ig4ug">
+        <li>
+          <a class="nav-hover focus-primary font-ancient" onclick="navigateTo(&#39;home&#39;)"><span class="iconify" data-icon="heroicons:home" data-width="18"></span><span>山门初启</span></a>
+        </li>
+        <li>
+          <a class="nav-hover focus-primary font-ancient" onclick="navigateTo(&#39;divination_chat&#39;)"><span class="iconify" data-icon="heroicons:chat-bubble-left-ellipsis" data-width="18"></span><span>问道于观</span></a>
+        </li>
+        <li>
+          <a class="nav-hover focus-primary font-ancient" onclick="navigateTo(&#39;knowledge_base&#39;)"><span class="iconify" data-icon="heroicons:book-open" data-width="18"></span><span>藏经阁</span></a>
+        </li>
+        <li>
+          <a class="nav-hover focus-primary font-ancient" onclick="navigateTo(&#39;user_account&#39;)"><span class="iconify" data-icon="heroicons:bookmark" data-width="18"></span><span>我的书架</span></a>
+        </li>
+        <li>
+          <a class="nav-hover focus-primary font-ancient" onclick="navigateTo(&#39;cultural_shop&#39;)"><span class="iconify" data-icon="heroicons:gift" data-width="18"></span><span>百宝轩</span></a>
+        </li>
+      </ul>
+    </div>
+    <!-- Right section: Search, User profile -->
+    <div id="ic4oq" class="navbar-end ic4oq spark-custom-ic4oq">
+      <!-- Global search with ancient scroll styling -->
+      <div class="form-control hidden md:block mr-4">
+        <div class="join">
+          <input type="text" placeholder="欲问何典..." class="input input-bordered input-sm join-item w-48 focus-primary bg-base-200/50 border-primary/30"><button aria-label="搜索" class="btn btn-sm join-item btn-primary mystic-glow">
+            <span class="iconify" data-icon="heroicons:magnifying-glass" data-width="16"></span>
+          </button>
+        </div>
+      </div>
+      <!-- Search icon for mobile --><button aria-label="搜索" class="btn btn-ghost btn-circle md:hidden focus-primary">
+        <span class="iconify text-primary" data-icon="heroicons:magnifying-glass" data-width="20"></span></button><!-- Notifications with mystical indicator -->
+      <div class="indicator mr-3">
+        <span class="indicator-item badge badge-accent badge-sm animate-pulse">3</span><button aria-label="通知" class="btn btn-ghost btn-circle focus-primary mystic-glow" onclick="navigateTo(&#39;user_account&#39;)">
+          <span class="iconify text-primary" data-icon="heroicons:bell" data-width="20"></span>
+        </button>
+      </div>
+      <!-- User profile dropdown with ancient styling -->
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar focus-primary">
+          <div class="avatar placeholder inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/20 text-primary border border-primary/30 mystic-glow">
+            <span class="iconify" data-icon="heroicons:user" data-width="20"></span>
+          </div>
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-50 p-3 shadow-ancient bg-base-100 rounded-box w-56 border border-primary/20 paper-texture">
+          <li class="menu-title">
+            <span class="font-ancient text-primary">道友专区</span>
+          </li>
+          <li>
+            <a class="nav-hover focus-primary font-ancient" onclick="navigateTo(&#39;user_account&#39;)"><span class="iconify text-secondary" data-icon="heroicons:user" data-width="16"></span><span>个人账户</span></a>
+          </li>
+          <li>
+            <a class="nav-hover focus-primary font-ancient" onclick="navigateTo(&#39;settings&#39;)"><span class="iconify text-secondary" data-icon="heroicons:cog-6-tooth" data-width="16"></span><span>设置</span></a>
+          </li>
+          <div class="divider my-1 border-primary/20"></div>
+          <li>
+            <a class="nav-hover focus-primary font-ancient text-accent" onclick="navigateTo(&#39;login_signup&#39;)"><span class="iconify" data-icon="heroicons:arrow-right-on-rectangle" data-width="16"></span><span>退出登录</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <!-- Main Content -->
+    <div class="main-content-wrapper pt-[72px]">
+      <!-- Hero Section -->
+      <section id="home_hero_section" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Video --><video allowfullscreen="allowfullscreen" autoplay="" muted="" loop="" controls="" class="absolute inset-0 w-full h-full object-cover z-0">
+          <source src="https://placehold.co/1920x1080.png?text=Climbing+Laoshan+Stone+Steps+First+Person+View" type="video/mp4"></video><!-- Video Overlay -->
+        <div id="iovyhz" class="absolute inset-0 bg-black/50 z-10 iovyhz spark-custom-iovyhz"></div>
+        <!-- Hero Content -->
+        <div class="relative z-20 text-center px-8">
+          <h1 class="text-6xl md:text-8xl font-ancient text-ancient-gold mb-6 mystic-glow">
+            山门初启
+          </h1>
+          <p class="text-xl md:text-2xl text-base-content/90 mb-12 font-ancient">
+            仙机渺渺，缘起崂山
+          </p>
+          <!-- CTA Button --><button id="ipoanb" class="btn btn-primary btn-lg px-12 py-4 text-lg font-ancient mystic-glow hover:scale-105 transition-all duration-300 ipoanb spark-custom-ipoanb" onclick="navigateTo(&#39;divination_chat&#39;)">
+            <span class="iconify mr-2" data-icon="heroicons:sparkles" data-width="24"></span>
+            进入秘境 / 求问先知
+          </button>
+        </div>
+      </section>
+      <!-- Value Proposition Section -->
+      <section id="value_proposition_section" class="py-24 bg-base-200 paper-texture value_proposition_section spark-custom-value_proposition_section">
+        <div id="ic1qsy" class="container mx-auto px-8 ic1qsy spark-custom-ic1qsy">
+          <!-- 书籍展示区域 -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-7xl mx-auto">
+            <!-- 左侧：作品分类 -->
+            <div class="lg:col-span-3">
+              <div id="iv40te" class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 iv40te spark-custom-iv40te">
+                <h3 class="text-xl font-ancient text-ancient-gold mb-6 text-center mystic-glow border-b border-primary/20 pb-2">
+                  <span class="iconify mr-2" data-icon="heroicons:megaphone" data-width="20"></span>
+                  仙境公告
+                </h3>
+                <div class="space-y-4">
+                  <!-- 重要公告 -->
+                  <div class="bg-primary/10 border-l-4 border-primary p-4 rounded-r-lg">
+                    <div class="flex items-start gap-3">
+                      <span class="iconify text-primary mt-1" data-icon="heroicons:exclamation-triangle" data-width="16"></span>
+                      <div>
+                        <h4 class="font-ancient text-sm font-bold text-primary mb-1">
+                          重要通知
+                        </h4>
+                        <p id="iskcnq" class="text-xs text-base-content/80 leading-relaxed iskcnq spark-custom-iskcnq">
+                          崂山仙境将于本月底进行系统升级，届时部分功能可能暂时无法使用，敬请谅解。
+                        </p>
+                        <span class="text-xs text-primary/70 mt-2 block">2024-12-20</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 活动公告 -->
+                  <div id="idjoch" class="bg-secondary/10 border-l-4 border-secondary p-4 rounded-r-lg idjoch spark-custom-idjoch">
+                    <div class="flex items-start gap-3">
+                      <span class="iconify text-secondary mt-1" data-icon="heroicons:gift" data-width="16"></span>
+                      <div>
+                        <h4 class="font-ancient text-sm font-bold text-secondary mb-1">
+                          新春活动
+                        </h4>
+                        <p class="text-xs text-base-content/80 leading-relaxed">
+                          新春佳节期间，所有法器享受8折优惠，更有神秘大礼等您来拿！
+                        </p>
+                        <span class="text-xs text-secondary/70 mt-2 block">2024-12-18</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 功能更新 -->
+                  <div class="bg-accent/10 border-l-4 border-accent p-4 rounded-r-lg">
+                    <div class="flex items-start gap-3">
+                      <span class="iconify text-accent mt-1" data-icon="heroicons:sparkles" data-width="16"></span>
+                      <div>
+                        <h4 class="font-ancient text-sm font-bold text-accent mb-1">
+                          功能更新
+                        </h4>
+                        <p class="text-xs text-base-content/80 leading-relaxed">
+                          AI占卜功能新增塔罗牌占卜模式，更加精准的预测等您体验。
+                        </p>
+                        <span class="text-xs text-accent/70 mt-2 block">2024-12-15</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 维护通知 -->
+                  <div class="bg-warning/10 border-l-4 border-warning p-4 rounded-r-lg">
+                    <div class="flex items-start gap-3">
+                      <span class="iconify text-warning mt-1" data-icon="heroicons:wrench-screwdriver" data-width="16"></span>
+                      <div>
+                        <h4 class="font-ancient text-sm font-bold text-warning mb-1">
+                          维护通知
+                        </h4>
+                        <p class="text-xs text-base-content/80 leading-relaxed">
+                          藏经阁数据库已完成维护，现已恢复正常访问，感谢您的耐心等待。
+                        </p>
+                        <span class="text-xs text-warning/70 mt-2 block">2024-12-12</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 社区动态 -->
+                  <div class="bg-info/10 border-l-4 border-info p-4 rounded-r-lg">
+                    <div class="flex items-start gap-3">
+                      <span class="iconify text-info mt-1" data-icon="heroicons:users" data-width="16"></span>
+                      <div>
+                        <h4 class="font-ancient text-sm font-bold text-info mb-1">
+                          社区动态
+                        </h4>
+                        <p class="text-xs text-base-content/80 leading-relaxed">
+                          本周新增道友1000+，欢迎各位新道友加入崂山仙境大家庭！
+                        </p>
+                        <span class="text-xs text-info/70 mt-2 block">2024-12-10</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 查看更多按钮 -->
+                <div class="mt-6 text-center">
+                  <button class="btn btn-outline btn-primary btn-sm w-full font-ancient text-xs hover:scale-105 transition-all duration-300" onclick="showNotification(&#39;更多公告功能即将开放&#39;, &#39;info&#39;)">
+                    <span class="iconify mr-2" data-icon="heroicons:chevron-right" data-width="16"></span>
+                    查看更多公告
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- 中间：图片展示框和操作按钮 -->
+            <div id="iyuto3" class="lg:col-span-6 iyuto3 spark-custom-iyuto3">
+              <div class="text-center">
+                <!-- 图片展示框 -->
+                <div class="bg-base-100 rounded-lg shadow-scroll ancient-container overflow-hidden mb-8">
+                  <div class="relative">
+                    <img alt="精选古籍收藏 - 展示崂山仙境中的珍贵典籍与道学经典" class="w-full h-96 object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/600x400.png?text=Featured+Ancient+Book+Collection">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white">
+                      <h3 class="text-2xl font-ancient mb-2">道学典籍精选</h3>
+                      <p class="text-sm opacity-90">
+                        探索千年智慧，品味文字之美
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- 操作按钮 -->
+                <div class="flex flex-col gap-4 items-center">
+                  <div class="flex gap-6 justify-center">
+                    <button class="btn btn-primary btn-lg px-8 font-ancient mystic-glow hover:scale-105 transition-all duration-300" onclick="navigateTo(&#39;knowledge_base&#39;)">
+                      <span class="iconify mr-2" data-icon="heroicons:pencil" data-width="24"></span>
+                      我要写书</button><button class="btn btn-secondary btn-lg px-8 font-ancient mystic-glow hover:scale-105 transition-all duration-300" onclick="navigateTo(&#39;knowledge_base&#39;)">
+                      <span class="iconify mr-2" data-icon="heroicons:book-open" data-width="24"></span>
+                      我要看书
+                    </button>
+                  </div>
+                  <button id="if5z8o" class="btn btn-accent btn-lg px-8 font-ancient mystic-glow hover:scale-105 transition-all duration-300 if5z8o spark-custom-if5z8o" onclick="navigateTo(&#39;knowledge_base&#39;)">
+                    <span class="iconify mr-2" data-icon="heroicons:funnel" data-width="24"></span>
+                    按条件找书
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- 右侧：本周编辑推荐榜 -->
+            <div class="lg:col-span-3">
+              <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6">
+                <h3 class="text-xl font-ancient text-ancient-gold mb-6 text-center mystic-glow">
+                  本周编辑推荐榜
+                </h3>
+                <div class="space-y-4">
+                  <!-- 推荐书籍1 -->
+                  <div class="flex items-center gap-3 p-3 rounded-lg bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《道德经新解》详情页即将开放&#39;, &#39;info&#39;)">
+                    <div class="w-12 h-16 bg-primary/20 rounded flex items-center justify-center text-primary font-bold text-xs">
+                      1
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="font-ancient text-sm font-bold text-base-content">
+                        道德经新解
+                      </h4>
+                      <p class="text-xs text-base-content/70">
+                        现代视角解读古典智慧
+                      </p>
+                    </div>
+                  </div>
+                  <!-- 推荐书籍2 -->
+                  <div class="flex items-center gap-3 p-3 rounded-lg bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《崂山传说》详情页即将开放&#39;, &#39;info&#39;)">
+                    <div class="w-12 h-16 bg-secondary/20 rounded flex items-center justify-center text-secondary font-bold text-xs">
+                      2
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="font-ancient text-sm font-bold text-base-content">
+                        崂山传说
+                      </h4>
+                      <p class="text-xs text-base-content/70">
+                        神秘仙山的古老故事
+                      </p>
+                    </div>
+                  </div>
+                  <!-- 推荐书籍3 -->
+                  <div class="flex items-center gap-3 p-3 rounded-lg bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《修仙指南》详情页即将开放&#39;, &#39;info&#39;)">
+                    <div class="w-12 h-16 bg-accent/20 rounded flex items-center justify-center text-accent font-bold text-xs">
+                      3
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="font-ancient text-sm font-bold text-base-content">
+                        修仙指南
+                      </h4>
+                      <p class="text-xs text-base-content/70">
+                        入门修行的必读典籍
+                      </p>
+                    </div>
+                  </div>
+                  <!-- 推荐书籍4 -->
+                  <div class="flex items-center gap-3 p-3 rounded-lg bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《风水秘术》详情页即将开放&#39;, &#39;info&#39;)">
+                    <div class="w-12 h-16 bg-warning/20 rounded flex items-center justify-center text-warning font-bold text-xs">
+                      4
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="font-ancient text-sm font-bold text-base-content">
+                        风水秘术
+                      </h4>
+                      <p class="text-xs text-base-content/70">
+                        堪舆学的精髓要义
+                      </p>
+                    </div>
+                  </div>
+                  <!-- 推荐书籍5 -->
+                  <div class="flex items-center gap-3 p-3 rounded-lg bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《仙侠奇缘》详情页即将开放&#39;, &#39;info&#39;)">
+                    <div class="w-12 h-16 bg-info/20 rounded flex items-center justify-center text-info font-bold text-xs">
+                      5
+                    </div>
+                    <div class="flex-1">
+                      <h4 class="font-ancient text-sm font-bold text-base-content">
+                        仙侠奇缘
+                      </h4>
+                      <p class="text-xs text-base-content/70">
+                        浪漫修仙的动人传说
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="value_proposition_section-5" class="py-24 bg-base-200 paper-texture value_proposition_section value_proposition_section-5 spark-custom-value_proposition_section-5 value_proposition_section-5">
+        <div id="iov3wc" class="container mx-auto px-8 iov3wc spark-custom-iov3wc iov3wc">
+          <h2 id="i2bibj" class="text-4xl md:text-5xl font-ancient text-ancient-gold text-center mb-16 mystic-glow i2bibj spark-custom-i2bibj i2bibj">
+            Popular This Month...
+          </h2>
+          <!-- 图片展示网格 -->
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-8 max-w-7xl mx-auto">
+            <!-- 图片展示框1 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《仙途逆袭》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="仙途逆袭 - 逆天改命的修仙传奇故事" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Immortal+Cultivation+Journey">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-primary text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-primary font-ancient">95%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  仙途逆袭
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  逆天改命的修仙传奇，踏破虚空，问鼎仙途巅峰
+                </p>
+              </div>
+            </div>
+            <!-- 图片展示框2 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《道心永恒》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="道心永恒 - 守护本心的修道之路" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Eternal+Dao+Heart">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-secondary text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-secondary font-ancient">92%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  道心永恒
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  守护本心的修道之路，道法自然，心如磐石
+                </p>
+              </div>
+            </div>
+            <!-- 图片展示框3 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《星辰大海》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="星辰大海 - 征服星空的壮丽史诗" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Starry+Ocean+Adventure">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-accent text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-accent font-ancient">89%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  星辰大海
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  征服星空的壮丽史诗，遨游宇宙，探索无限
+                </p>
+              </div>
+            </div>
+            <!-- 图片展示框4 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《灵域至尊》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="灵域至尊 - 称霸灵域的王者之路" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Spirit+Realm+Supreme">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-warning text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-warning font-ancient">87%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  灵域至尊
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  称霸灵域的王者之路，统御万灵，登临绝巅
+                </p>
+              </div>
+            </div>
+            <!-- 图片展示框5 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《天道轮回》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="天道轮回 - 轮回中的永恒追求" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Heavenly+Dao+Reincarnation">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-info text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-info font-ancient">94%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  天道轮回
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  轮回中的永恒追求，天道循环，生生不息
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- 左右箭头按钮 -->
+          <div class="flex items-center justify-center gap-4 mt-8">
+            <button class="btn btn-circle btn-outline btn-primary mystic-glow hover:scale-110 transition-all duration-300">
+              <span class="iconify text-primary" data-icon="heroicons:chevron-left" data-width="24"></span></button><button class="btn btn-circle btn-outline btn-primary mystic-glow hover:scale-110 transition-all duration-300">
+              <span class="iconify text-primary" data-icon="heroicons:chevron-right" data-width="24"></span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section id="value_proposition_section-5-4" class="py-24 bg-base-200 paper-texture value_proposition_section value_proposition_section-5 spark-custom-value_proposition_section-5 value_proposition_section-5-4 spark-custom-value_proposition_section-5-4">
+        <div id="iov3wc-2" class="container mx-auto px-8 iov3wc spark-custom-iov3wc iov3wc-2 spark-custom-iov3wc-2">
+          <h2 id="i2bibj-2" class="text-4xl md:text-5xl font-ancient text-ancient-gold text-center mb-16 mystic-glow i2bibj spark-custom-i2bibj i2bibj-2 spark-custom-i2bibj-2">
+            New Releases
+          </h2>
+          <!-- 图片展示网格 -->
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-8 max-w-7xl mx-auto">
+            <!-- 图片展示框1 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《仙途逆袭》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="仙途逆袭 - 逆天改命的修仙传奇故事" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Immortal+Cultivation+Journey">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-primary text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-primary font-ancient">95%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  仙途逆袭
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  逆天改命的修仙传奇，踏破虚空，问鼎仙途巅峰
+                </p>
+              </div>
+            </div>
+            <!-- 图片展示框2 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《道心永恒》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="道心永恒 - 守护本心的修道之路" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Eternal+Dao+Heart">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-secondary text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-secondary font-ancient">92%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  道心永恒
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  守护本心的修道之路，道法自然，心如磐石
+                </p>
+              </div>
+            </div>
+            <!-- 图片展示框3 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《星辰大海》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="星辰大海 - 征服星空的壮丽史诗" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Starry+Ocean+Adventure">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-accent text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-accent font-ancient">89%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  星辰大海
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  征服星空的壮丽史诗，遨游宇宙，探索无限
+                </p>
+              </div>
+            </div>
+            <!-- 图片展示框4 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《灵域至尊》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="灵域至尊 - 称霸灵域的王者之路" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Spirit+Realm+Supreme">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-warning text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-warning font-ancient">87%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  灵域至尊
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  称霸灵域的王者之路，统御万灵，登临绝巅
+                </p>
+              </div>
+            </div>
+            <!-- 图片展示框5 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《天道轮回》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="天道轮回 - 轮回中的永恒追求" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Heavenly+Dao+Reincarnation">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-info text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-info font-ancient">94%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  天道轮回
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  轮回中的永恒追求，天道循环，生生不息
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- 左右箭头按钮 -->
+          <div class="flex items-center justify-center gap-4 mt-8">
+            <button class="btn btn-circle btn-outline btn-primary mystic-glow hover:scale-110 transition-all duration-300">
+              <span class="iconify text-primary" data-icon="heroicons:chevron-left" data-width="24"></span></button><button class="btn btn-circle btn-outline btn-primary mystic-glow hover:scale-110 transition-all duration-300">
+              <span class="iconify text-primary" data-icon="heroicons:chevron-right" data-width="24"></span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section id="value_proposition_section-5-4-2" class="py-24 bg-base-200 paper-texture value_proposition_section value_proposition_section-5 spark-custom-value_proposition_section-5 value_proposition_section-5-4 spark-custom-value_proposition_section-5-4 value_proposition_section-5-4-2 spark-custom-value_proposition_section-5-4-2">
+        <div id="iov3wc-2-2" class="container mx-auto px-8 iov3wc spark-custom-iov3wc iov3wc-2 spark-custom-iov3wc-2">
+          <h2 id="i2bibj-2-3" class="text-4xl md:text-5xl font-ancient text-ancient-gold text-center mb-16 mystic-glow i2bibj spark-custom-i2bibj i2bibj-2 spark-custom-i2bibj-2 i2bibj-2-3 spark-custom-i2bibj-2-3">
+            Limited Time Special
+          </h2>
+          <!-- 图片展示网格 -->
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-8 max-w-7xl mx-auto">
+            <!-- 图片展示框1 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《仙途逆袭》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="仙途逆袭 - 逆天改命的修仙传奇故事" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Immortal+Cultivation+Journey">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-primary text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-primary font-ancient">95%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  仙途逆袭
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  逆天改命的修仙传奇，踏破虚空，问鼎仙途巅峰
+                </p>
+              </div>
+            </div>
+            <!-- 图片展示框2 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《道心永恒》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="道心永恒 - 守护本心的修道之路" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Eternal+Dao+Heart">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-secondary text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-secondary font-ancient">92%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  道心永恒
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  守护本心的修道之路，道法自然，心如磐石
+                </p>
+              </div>
+            </div>
+            <!-- 图片展示框3 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《星辰大海》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="星辰大海 - 征服星空的壮丽史诗" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Starry+Ocean+Adventure">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-accent text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-accent font-ancient">89%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  星辰大海
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  征服星空的壮丽史诗，遨游宇宙，探索无限
+                </p>
+              </div>
+            </div>
+            <!-- 图片展示框4 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《灵域至尊》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="灵域至尊 - 称霸灵域的王者之路" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Spirit+Realm+Supreme">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-warning text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-warning font-ancient">87%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  灵域至尊
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  称霸灵域的王者之路，统御万灵，登临绝巅
+                </p>
+              </div>
+            </div>
+            <!-- 图片展示框5 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《天道轮回》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="天道轮回 - 轮回中的永恒追求" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Heavenly+Dao+Reincarnation">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-info text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-info font-ancient">94%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  天道轮回
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  轮回中的永恒追求，天道循环，生生不息
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- 左右箭头按钮 -->
+          <div class="flex items-center justify-center gap-4 mt-8">
+            <button class="btn btn-circle btn-outline btn-primary mystic-glow hover:scale-110 transition-all duration-300">
+              <span class="iconify text-primary" data-icon="heroicons:chevron-left" data-width="24"></span></button><button class="btn btn-circle btn-outline btn-primary mystic-glow hover:scale-110 transition-all duration-300">
+              <span class="iconify text-primary" data-icon="heroicons:chevron-right" data-width="24"></span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section id="value_proposition_section-5-4-2-2" class="py-24 bg-base-200 paper-texture value_proposition_section value_proposition_section-5 spark-custom-value_proposition_section-5 value_proposition_section-5-4 spark-custom-value_proposition_section-5-4 value_proposition_section-5-4-2 spark-custom-value_proposition_section-5-4-2">
+        <div id="iov3wc-2-2-2" class="container mx-auto px-8 iov3wc spark-custom-iov3wc iov3wc-2 spark-custom-iov3wc-2">
+          <h2 id="i2bibj-2-3-2" class="text-4xl md:text-5xl font-ancient text-ancient-gold text-center mb-16 mystic-glow i2bibj spark-custom-i2bibj i2bibj-2 spark-custom-i2bibj-2 i2bibj-2-3 spark-custom-i2bibj-2-3 i2bibj-2-3-2 spark-custom-i2bibj-2-3-2">
+            Sneak Peaks
+          </h2>
+          <!-- 图片展示网格 -->
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-8 max-w-7xl mx-auto">
+            <!-- 图片展示框1 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《仙途逆袭》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="仙途逆袭 - 逆天改命的修仙传奇故事" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Immortal+Cultivation+Journey">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-primary text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-primary font-ancient">95%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  仙途逆袭
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  逆天改命的修仙传奇，踏破虚空，问鼎仙途巅峰
+                </p>
+              </div>
+            </div>
+            <!-- 图片展示框2 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《道心永恒》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="道心永恒 - 守护本心的修道之路" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Eternal+Dao+Heart">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-secondary text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-secondary font-ancient">92%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  道心永恒
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  守护本心的修道之路，道法自然，心如磐石
+                </p>
+              </div>
+            </div>
+            <!-- 图片展示框3 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《星辰大海》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="星辰大海 - 征服星空的壮丽史诗" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Starry+Ocean+Adventure">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-accent text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-accent font-ancient">89%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  星辰大海
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  征服星空的壮丽史诗，遨游宇宙，探索无限
+                </p>
+              </div>
+            </div>
+            <!-- 图片展示框4 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《灵域至尊》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="灵域至尊 - 称霸灵域的王者之路" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Spirit+Realm+Supreme">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-warning text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-warning font-ancient">87%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  灵域至尊
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  称霸灵域的王者之路，统御万灵，登临绝巅
+                </p>
+              </div>
+            </div>
+            <!-- 图片展示框5 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-6 hover:shadow-ancient transition-all duration-300 cursor-pointer" onclick="showNotification(&#39;《天道轮回》详情页即将开放&#39;, &#39;info&#39;)">
+              <!-- 图片 -->
+              <div class="w-full h-48 mb-4 rounded-lg overflow-hidden">
+                <img alt="天道轮回 - 轮回中的永恒追求" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/240x192.png?text=Heavenly+Dao+Reincarnation">
+              </div>
+              <!-- 大拇指和百分比 -->
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="iconify text-info text-2xl" data-icon="heroicons:hand-thumb-up" data-width="24"></span><span class="text-lg font-bold text-info font-ancient">94%</span>
+              </div>
+              <!-- 文字描述框 -->
+              <div class="bg-base-200/50 rounded-lg p-3 text-center">
+                <h4 class="font-ancient text-sm font-bold text-base-content mb-1">
+                  天道轮回
+                </h4>
+                <p class="text-xs text-base-content/70 leading-relaxed">
+                  轮回中的永恒追求，天道循环，生生不息
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- 左右箭头按钮 -->
+          <div class="flex items-center justify-center gap-4 mt-8">
+            <button class="btn btn-circle btn-outline btn-primary mystic-glow hover:scale-110 transition-all duration-300">
+              <span class="iconify text-primary" data-icon="heroicons:chevron-left" data-width="24"></span></button><button class="btn btn-circle btn-outline btn-primary mystic-glow hover:scale-110 transition-all duration-300">
+              <span class="iconify text-primary" data-icon="heroicons:chevron-right" data-width="24"></span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section id="value_proposition_section-5-3" class="py-24 bg-base-200 paper-texture value_proposition_section value_proposition_section-5-3 spark-custom-value_proposition_section-5-3">
+        <div class="container mx-auto px-8">
+          <h2 class="text-4xl md:text-5xl font-ancient text-ancient-gold text-center mb-16 mystic-glow idvsu6 spark-custom-idvsu6" id="idvsu6">
+            First and The Top Series
+          </h2>
+          <!-- 榜单网格 -->
+          <div class="grid grid-cols-1 lg:grid-cols-7 gap-6 max-w-full mx-auto">
+            <!-- 月票榜·VIP新作 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-4">
+              <h3 class="text-lg font-ancient text-ancient-gold mb-4 text-center mystic-glow border-b border-primary/20 pb-2 i88ycg spark-custom-i88ycg" id="i88ycg">
+                风水最受欢迎榜
+              </h3>
+              <div class="space-y-3">
+                <!-- 书籍1 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《仙途逆袭》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-primary/20 rounded flex items-center justify-center text-primary font-bold text-xs">
+                    1
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      仙途逆袭
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      逆天改命的修仙传奇
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍2 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《道心永恒》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-secondary/20 rounded flex items-center justify-center text-secondary font-bold text-xs">
+                    2
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      道心永恒
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      守护本心的修道之路
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍3 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《星辰大海》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-accent/20 rounded flex items-center justify-center text-accent font-bold text-xs">
+                    3
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      星辰大海
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      征服星空的壮丽史诗
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍4 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《灵域至尊》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-warning/20 rounded flex items-center justify-center text-warning font-bold text-xs">
+                    4
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      灵域至尊
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      称霸灵域的王者之路
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍5 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《天道轮回》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-info/20 rounded flex items-center justify-center text-info font-bold text-xs">
+                    5
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      天道轮回
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      轮回中的永恒追求
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-outline btn-primary btn-sm w-full mt-4 font-ancient text-xs" onclick="navigateTo(&#39;knowledge_base&#39;)">
+                点击查看更多
+              </button>
+            </div>
+            <!-- 畅销榜 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-4">
+              <h3 class="text-lg font-ancient text-ancient-gold mb-4 text-center mystic-glow border-b border-primary/20 pb-2 iczj3f spark-custom-iczj3f" id="iczj3f">
+                修仙最受欢迎榜
+              </h3>
+              <div class="space-y-3">
+                <!-- 书籍1 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《修真界传说》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-primary/20 rounded flex items-center justify-center text-primary font-bold text-xs">
+                    1
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      修真界传说
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      经典修真巨作
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍2 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《武道巅峰》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-secondary/20 rounded flex items-center justify-center text-secondary font-bold text-xs">
+                    2
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      武道巅峰
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      武者的终极追求
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍3 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《神魔大陆》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-accent/20 rounded flex items-center justify-center text-accent font-bold text-xs">
+                    3
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      神魔大陆
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      神魔争霸的史诗
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍4 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《仙侠世界》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-warning/20 rounded flex items-center justify-center text-warning font-bold text-xs">
+                    4
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      仙侠世界
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      仙侠江湖的恩怨情仇
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍5 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《玄幻之王》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-info/20 rounded flex items-center justify-center text-info font-bold text-xs">
+                    5
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      玄幻之王
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      玄幻世界的王者
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-outline btn-primary btn-sm w-full mt-4 font-ancient text-xs" onclick="navigateTo(&#39;knowledge_base&#39;)">
+                点击查看更多
+              </button>
+            </div>
+            <!-- 周推荐榜 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-4">
+              <h3 class="text-lg font-ancient text-ancient-gold mb-4 text-center mystic-glow border-b border-primary/20 pb-2 ibqlvj spark-custom-ibqlvj" id="ibqlvj">
+                武侠最受欢迎榜
+              </h3>
+              <div class="space-y-3">
+                <!-- 书籍1 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《都市修仙录》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-primary/20 rounded flex items-center justify-center text-primary font-bold text-xs">
+                    1
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      都市修仙录
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      现代都市中的修仙者
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍2 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《重生之路》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-secondary/20 rounded flex items-center justify-center text-secondary font-bold text-xs">
+                    2
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      重生之路
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      重生后的逆袭人生
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍3 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《异界征途》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-accent/20 rounded flex items-center justify-center text-accent font-bold text-xs">
+                    3
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      异界征途
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      穿越异界的冒险
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍4 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《灵气复苏》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-warning/20 rounded flex items-center justify-center text-warning font-bold text-xs">
+                    4
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      灵气复苏
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      灵气复苏的新时代
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍5 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《系统流传奇》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-info/20 rounded flex items-center justify-center text-info font-bold text-xs">
+                    5
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      系统流传奇
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      系统助力的成长之路
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-outline btn-primary btn-sm w-full mt-4 font-ancient text-xs" onclick="navigateTo(&#39;knowledge_base&#39;)">
+                点击查看更多
+              </button>
+            </div>
+            <!-- 月推荐榜 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-4">
+              <h3 class="text-lg font-ancient text-ancient-gold mb-4 text-center mystic-glow border-b border-primary/20 pb-2 if09o8 spark-custom-if09o8" id="if09o8">
+                历史最受欢迎榜
+              </h3>
+              <div class="space-y-3">
+                <!-- 书籍1 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《洪荒纪元》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-primary/20 rounded flex items-center justify-center text-primary font-bold text-xs">
+                    1
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      洪荒纪元
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      洪荒世界的传说
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍2 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《万古至尊》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-secondary/20 rounded flex items-center justify-center text-secondary font-bold text-xs">
+                    2
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      万古至尊
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      万古岁月中的至尊
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍3 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《神话复苏》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-accent/20 rounded flex items-center justify-center text-accent font-bold text-xs">
+                    3
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      神话复苏
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      古老神话的重现
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍4 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《无限进化》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-warning/20 rounded flex items-center justify-center text-warning font-bold text-xs">
+                    4
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      无限进化
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      无尽的进化之路
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍5 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《时空穿梭》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-info/20 rounded flex items-center justify-center text-info font-bold text-xs">
+                    5
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      时空穿梭
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      穿梭时空的奇遇
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-outline btn-primary btn-sm w-full mt-4 font-ancient text-xs" onclick="navigateTo(&#39;knowledge_base&#39;)">
+                点击查看更多
+              </button>
+            </div>
+            <!-- 签约作者新书榜 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-4">
+              <h3 class="text-lg font-ancient text-ancient-gold mb-4 text-center mystic-glow border-b border-primary/20 pb-2 i3w0q6 spark-custom-i3w0q6" id="i3w0q6">
+                王牌作者新书榜
+              </h3>
+              <div class="space-y-3">
+                <!-- 书籍1 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《天才炼丹师》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-primary/20 rounded flex items-center justify-center text-primary font-bold text-xs">
+                    1
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      天才炼丹师
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      炼丹界的天才少年
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍2 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《剑道独尊》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-secondary/20 rounded flex items-center justify-center text-secondary font-bold text-xs">
+                    2
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      剑道独尊
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      剑道的至高境界
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍3 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《符箓大师》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-accent/20 rounded flex items-center justify-center text-accent font-bold text-xs">
+                    3
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      符箓大师
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      符箓之道的宗师
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍4 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《阵法天师》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-warning/20 rounded flex items-center justify-center text-warning font-bold text-xs">
+                    4
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      阵法天师
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      阵法的至高造诣
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍5 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《御兽师传说》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-info/20 rounded flex items-center justify-center text-info font-bold text-xs">
+                    5
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      御兽师传说
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      驯服万兽的传奇
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-outline btn-primary btn-sm w-full mt-4 font-ancient text-xs" onclick="navigateTo(&#39;knowledge_base&#39;)">
+                点击查看更多
+              </button>
+            </div>
+            <!-- 完本排行 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-4">
+              <h3 class="text-lg font-ancient text-ancient-gold mb-4 text-center mystic-glow border-b border-primary/20 pb-2">
+                完本排行
+              </h3>
+              <div class="space-y-3">
+                <!-- 书籍1 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《凡人修仙传》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-primary/20 rounded flex items-center justify-center text-primary font-bold text-xs">
+                    1
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      凡人修仙传
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      凡人的修仙之路
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍2 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《斗破苍穹》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-secondary/20 rounded flex items-center justify-center text-secondary font-bold text-xs">
+                    2
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      斗破苍穹
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      斗气大陆的传奇
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍3 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《完美世界》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-accent/20 rounded flex items-center justify-center text-accent font-bold text-xs">
+                    3
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      完美世界
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      追求完美的世界
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍4 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《遮天》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-warning/20 rounded flex items-center justify-center text-warning font-bold text-xs">
+                    4
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      遮天
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      遮蔽苍天的力量
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍5 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《圣墟》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-info/20 rounded flex items-center justify-center text-info font-bold text-xs">
+                    5
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      圣墟
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      神秘的圣墟世界
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-outline btn-primary btn-sm w-full mt-4 font-ancient text-xs" onclick="navigateTo(&#39;knowledge_base&#39;)">
+                点击查看更多
+              </button>
+            </div>
+            <!-- 新品推荐 -->
+            <div class="bg-base-100 rounded-lg shadow-scroll ancient-container p-4">
+              <h3 class="text-lg font-ancient text-ancient-gold mb-4 text-center mystic-glow border-b border-primary/20 pb-2 icvnqf spark-custom-icvnqf" id="icvnqf">
+                最新更新榜
+              </h3>
+              <div class="space-y-3">
+                <!-- 书籍1 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《元宇宙修仙》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-primary/20 rounded flex items-center justify-center text-primary font-bold text-xs">
+                    1
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      元宇宙修仙
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      虚拟世界的修仙之路
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍2 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《AI道法》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-secondary/20 rounded flex items-center justify-center text-secondary font-bold text-xs">
+                    2
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      AI道法
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      人工智能与道法融合
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍3 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《星际修真》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-accent/20 rounded flex items-center justify-center text-accent font-bold text-xs">
+                    3
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      星际修真
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      星际时代的修真者
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍4 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《量子仙途》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-warning/20 rounded flex items-center justify-center text-warning font-bold text-xs">
+                    4
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      量子仙途
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      量子力学的仙道
+                    </p>
+                  </div>
+                </div>
+                <!-- 书籍5 -->
+                <div class="flex items-center gap-2 p-2 rounded bg-base-200/50 hover:bg-base-200 transition-colors duration-200 cursor-pointer" onclick="showNotification(&#39;《区块链修仙》详情页即将开放&#39;, &#39;info&#39;)">
+                  <div class="w-8 h-10 bg-info/20 rounded flex items-center justify-center text-info font-bold text-xs">
+                    5
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-ancient text-xs font-bold text-base-content truncate">
+                      区块链修仙
+                    </h4>
+                    <p class="text-xs text-base-content/70 truncate">
+                      去中心化的修仙世界
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-outline btn-primary btn-sm w-full mt-4 font-ancient text-xs" onclick="navigateTo(&#39;knowledge_base&#39;)">
+                点击查看更多
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="value_proposition_section-4" class="py-24 bg-base-200 paper-texture value_proposition_section">
+        <div id="ic1qsy-2" class="container mx-auto px-8 ic1qsy">
+          <h2 id="i3mj52-2" class="text-4xl md:text-5xl font-ancient text-ancient-gold text-center mb-16 mystic-glow i3mj52">
+            BEST SELLERS
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+            <!-- AI道法 Card -->
+            <div data-repeatable="true" data-type="value-card" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;divination_chat&#39;)">
+              <div id="i5dtif-3" class="card-body text-center p-8 i5dtif">
+                <!-- 图片展示框 -->
+                <div class="w-full h-48 mb-4 rounded-lg overflow-hidden shadow-scroll">
+                  <img alt="传统手串 - 精美的佛珠手链，蕴含古老智慧与神秘力量" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 ijffgi" id="ijffgi-3" data-src="placehold.co/280x192.png?text=Traditional+Prayer+Beads+Bracelet">
+                </div>
+                <!-- 价格信息 -->
+                <div class="mb-6 text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <span class="text-2xl font-ancient text-ancient-gold font-bold">¥888</span><span class="text-sm text-base-content/60 line-through">¥1288</span>
+                  </div>
+                  <div class="text-xs text-accent font-ancient mt-1">
+                    限时仙缘价
+                  </div>
+                </div>
+                <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-primary/20 rounded-full mystic-glow">
+                  <span class="iconify text-primary text-4xl i68dze" data-icon="heroicons:sparkles" data-width="48" id="i68dze-3"></span>
+                </div>
+                <h3 id="i0pwvc-2" class="card-title text-2xl font-ancient text-ancient-gold justify-center mb-4 i0pwvc">
+                  XXX手串
+                </h3>
+                <p class="text-base-content/80 mb-6 leading-relaxed">
+                  预测未来，洞悉因果。运用古老智慧与现代科技，为你揭示命运玄机。
+                </p>
+                <div class="card-actions justify-center">
+                  <button class="btn btn-outline btn-primary font-ancient">
+                    探寻更多
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- 经卷符箓 Card -->
+            <div data-repeatable="true" data-type="value-card" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;knowledge_base&#39;)">
+              <div id="i2y4u9-3" class="card-body text-center p-8 i2y4u9">
+                <!-- 图片展示框 -->
+                <div class="w-full h-48 mb-4 rounded-lg overflow-hidden shadow-scroll">
+                  <img alt="古代符箓 - 神秘的道教符箓卷轴，蕴含千年道学精华" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/280x192.png?text=Ancient+Talisman+Scroll">
+                </div>
+                <!-- 价格信息 -->
+                <div class="mb-6 text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <span class="text-2xl font-ancient text-ancient-gold font-bold">¥1288</span><span class="text-sm text-base-content/60 line-through">¥1888</span>
+                  </div>
+                  <div class="text-xs text-accent font-ancient mt-1">
+                    限时仙缘价
+                  </div>
+                </div>
+                <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-secondary/20 rounded-full mystic-glow">
+                  <span class="iconify text-secondary text-4xl" data-icon="heroicons:book-open" data-width="48"></span>
+                </div>
+                <h3 id="i05co2-2" class="card-title text-2xl font-ancient text-ancient-gold justify-center mb-4 i05co2">
+                  符箓
+                </h3>
+                <p id="ixnzeo-3" class="text-base-content/80 mb-6 leading-relaxed ixnzeo">
+                  汇集千年道学精华，收录古籍秘典。让智慧之光照亮求道之路。
+                </p>
+                <div class="card-actions justify-center">
+                  <button class="btn btn-outline btn-secondary font-ancient">
+                    探寻更多
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- 文化藏品 Card -->
+            <div data-repeatable="true" data-type="value-card" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;cultural_shop&#39;)">
+              <div id="i3nmbv-3" class="card-body text-center p-8 i3nmbv">
+                <!-- 图片展示框 -->
+                <div class="w-full h-48 mb-4 rounded-lg overflow-hidden shadow-scroll">
+                  <img alt="雷击木 - 天然雷击木制品，蕴含天地灵气与神秘力量" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/280x192.png?text=Lightning+Strike+Wood+Artifact">
+                </div>
+                <!-- 价格信息 -->
+                <div class="mb-6 text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <span class="text-2xl font-ancient text-ancient-gold font-bold">¥2888</span><span class="text-sm text-base-content/60 line-through">¥3888</span>
+                  </div>
+                  <div class="text-xs text-accent font-ancient mt-1">
+                    限时仙缘价
+                  </div>
+                </div>
+                <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-accent/20 rounded-full mystic-glow">
+                  <span class="iconify text-accent text-4xl" data-icon="heroicons:gift" data-width="48"></span>
+                </div>
+                <h3 id="i90kez-2" class="card-title text-2xl font-ancient text-ancient-gold justify-center mb-4 i90kez">
+                  雷击木
+                </h3>
+                <p class="text-base-content/80 mb-6 leading-relaxed">
+                  珍藏东方文化瑰宝，传承千年匠心工艺。让文化之美融入生活。
+                </p>
+                <div class="card-actions justify-center">
+                  <button class="btn btn-outline btn-accent font-ancient">
+                    探寻更多
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="value_proposition_section-3" class="py-24 bg-base-200 paper-texture value_proposition_section value_proposition_section-3 spark-custom-value_proposition_section-3">
+        <div id="i9bst7" class="container mx-auto px-8 i9bst7 spark-custom-i9bst7">
+          <h2 id="i3mj52-3" class="text-4xl md:text-5xl font-ancient text-ancient-gold text-center mb-16 mystic-glow i3mj52 i3mj52-3 spark-custom-i3mj52-3">
+            NEW ARRIVAL
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+            <!-- AI道法 Card -->
+            <div data-repeatable="true" data-type="value-card" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;divination_chat&#39;)">
+              <div id="i5dtif-2" class="card-body text-center p-8 i5dtif">
+                <!-- 图片展示框 -->
+                <div class="w-full h-48 mb-4 rounded-lg overflow-hidden shadow-scroll">
+                  <img alt="传统手串 - 精美的佛珠手链，蕴含古老智慧与神秘力量" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 ijffgi" id="ijffgi-2" data-src="placehold.co/280x192.png?text=Traditional+Prayer+Beads+Bracelet">
+                </div>
+                <!-- 价格信息 -->
+                <div class="mb-6 text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <span class="text-2xl font-ancient text-ancient-gold font-bold">¥888</span><span class="text-sm text-base-content/60 line-through">¥1288</span>
+                  </div>
+                  <div class="text-xs text-accent font-ancient mt-1">
+                    限时仙缘价
+                  </div>
+                </div>
+                <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-primary/20 rounded-full mystic-glow">
+                  <span class="iconify text-primary text-4xl i68dze" data-icon="heroicons:sparkles" data-width="48" id="i68dze-2"></span>
+                </div>
+                <h3 id="i0pwvc-3" class="card-title text-2xl font-ancient text-ancient-gold justify-center mb-4 i0pwvc">
+                  XXX手串
+                </h3>
+                <p class="text-base-content/80 mb-6 leading-relaxed">
+                  预测未来，洞悉因果。运用古老智慧与现代科技，为你揭示命运玄机。
+                </p>
+                <div class="card-actions justify-center">
+                  <button class="btn btn-outline btn-primary font-ancient">
+                    探寻更多
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- 经卷符箓 Card -->
+            <div data-repeatable="true" data-type="value-card" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;knowledge_base&#39;)">
+              <div id="i2y4u9-2" class="card-body text-center p-8 i2y4u9">
+                <!-- 图片展示框 -->
+                <div class="w-full h-48 mb-4 rounded-lg overflow-hidden shadow-scroll">
+                  <img alt="古代符箓 - 神秘的道教符箓卷轴，蕴含千年道学精华" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/280x192.png?text=Ancient+Talisman+Scroll">
+                </div>
+                <!-- 价格信息 -->
+                <div class="mb-6 text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <span class="text-2xl font-ancient text-ancient-gold font-bold">¥1288</span><span class="text-sm text-base-content/60 line-through">¥1888</span>
+                  </div>
+                  <div class="text-xs text-accent font-ancient mt-1">
+                    限时仙缘价
+                  </div>
+                </div>
+                <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-secondary/20 rounded-full mystic-glow">
+                  <span class="iconify text-secondary text-4xl" data-icon="heroicons:book-open" data-width="48"></span>
+                </div>
+                <h3 id="i05co2-3" class="card-title text-2xl font-ancient text-ancient-gold justify-center mb-4 i05co2">
+                  符箓
+                </h3>
+                <p id="ixnzeo-2" class="text-base-content/80 mb-6 leading-relaxed ixnzeo">
+                  汇集千年道学精华，收录古籍秘典。让智慧之光照亮求道之路。
+                </p>
+                <div class="card-actions justify-center">
+                  <button class="btn btn-outline btn-secondary font-ancient">
+                    探寻更多
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- 文化藏品 Card -->
+            <div data-repeatable="true" data-type="value-card" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;cultural_shop&#39;)">
+              <div id="i3nmbv-2" class="card-body text-center p-8 i3nmbv">
+                <!-- 图片展示框 -->
+                <div class="w-full h-48 mb-4 rounded-lg overflow-hidden shadow-scroll">
+                  <img alt="雷击木 - 天然雷击木制品，蕴含天地灵气与神秘力量" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/280x192.png?text=Lightning+Strike+Wood+Artifact">
+                </div>
+                <!-- 价格信息 -->
+                <div class="mb-6 text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <span class="text-2xl font-ancient text-ancient-gold font-bold">¥2888</span><span class="text-sm text-base-content/60 line-through">¥3888</span>
+                  </div>
+                  <div class="text-xs text-accent font-ancient mt-1">
+                    限时仙缘价
+                  </div>
+                </div>
+                <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-accent/20 rounded-full mystic-glow">
+                  <span class="iconify text-accent text-4xl" data-icon="heroicons:gift" data-width="48"></span>
+                </div>
+                <h3 id="i90kez-3" class="card-title text-2xl font-ancient text-ancient-gold justify-center mb-4 i90kez">
+                  雷击木
+                </h3>
+                <p class="text-base-content/80 mb-6 leading-relaxed">
+                  珍藏东方文化瑰宝，传承千年匠心工艺。让文化之美融入生活。
+                </p>
+                <div class="card-actions justify-center">
+                  <button class="btn btn-outline btn-accent font-ancient">
+                    探寻更多
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="value_proposition_section-3-4" class="py-24 bg-base-200 paper-texture value_proposition_section value_proposition_section-3-4 spark-custom-value_proposition_section-3-4">
+        <div id="i9bst7-2" class="container mx-auto px-8 i9bst7 i9bst7-2 spark-custom-i9bst7-2">
+          <h2 id="i3mj52-3-4" class="text-4xl md:text-5xl font-ancient text-ancient-gold text-center mb-16 mystic-glow i3mj52 i3mj52-3-4 spark-custom-i3mj52-3-4">
+            Theme exhibition
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+            <!-- AI道法 Card -->
+            <div data-repeatable="true" data-type="value-card" id="innc0l" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container innc0l spark-custom-innc0l" onclick="navigateTo(&#39;divination_chat&#39;)">
+              <div id="iwhxex" class="card-body text-center p-8 iwhxex spark-custom-iwhxex">
+                <!-- 图片展示框 -->
+                <div class="w-full h-48 mb-6 rounded-lg overflow-hidden shadow-scroll">
+                  <img alt="神秘法器 - 精美的道教法器收藏，蕴含古老神秘力量" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/280x192.png?text=Mystical+Artifact+Collection">
+                </div>
+                <!-- 文字描述 -->
+                <h3 id="idq13u" class="card-title text-2xl font-ancient text-ancient-gold justify-center mb-4 idq13u spark-custom-idq13u">
+                  光影里的中国道教
+                </h3>
+                <p class="text-base-content/80 mb-4 leading-relaxed">
+                  探索古老的神秘法器，感受千年道学文化的深邃魅力与神秘力量。
+                </p>
+                <!-- 时间线 -->
+                <div class="mb-6 text-center">
+                  <span class="text-sm font-ancient text-primary/80 bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
+                    2025.7-2025.11
+                  </span>
+                </div>
+                <!-- Shop Now 按钮 -->
+                <div class="card-actions justify-center">
+                  <button class="btn btn-primary font-ancient mystic-glow hover:scale-105 transition-all duration-300">
+                    <span class="iconify mr-2" data-icon="heroicons:shopping-bag" data-width="20"></span>
+                    Shop Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- 经卷符箓 Card -->
+            <div data-repeatable="true" data-type="value-card" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;knowledge_base&#39;)"></div>
+            <!-- 文化藏品 Card -->
+            <div data-repeatable="true" data-type="value-card" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;cultural_shop&#39;)"></div>
+          </div>
+        </div>
+      </section>
+      <section id="value_proposition_section-3-3" class="py-24 bg-base-200 paper-texture value_proposition_section">
+        <div id="imdzun" class="container mx-auto px-8 i9bst7">
+          <h2 id="i3mj52-3-3" class="text-4xl md:text-5xl font-ancient text-ancient-gold text-center mb-16 mystic-glow i3mj52 i3mj52-3-3 spark-custom-i3mj52-3-3">
+            You can also choose
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+            <!-- AI道法 Card -->
+            <div data-repeatable="true" data-type="value-card" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;divination_chat&#39;)">
+              <div id="i5dtif-2-3" class="card-body text-center p-8 i5dtif">
+                <!-- 图片展示框 -->
+                <div class="w-full h-48 mb-4 rounded-lg overflow-hidden shadow-scroll">
+                  <img alt="传统手串 - 精美的佛珠手链，蕴含古老智慧与神秘力量" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 ijffgi" id="ijffgi-2-3" data-src="placehold.co/280x192.png?text=Traditional+Prayer+Beads+Bracelet">
+                </div>
+                <!-- 价格信息 -->
+                <div class="mb-6 text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <span class="text-2xl font-ancient text-ancient-gold font-bold">¥888</span><span class="text-sm text-base-content/60 line-through">¥1288</span>
+                  </div>
+                  <div class="text-xs text-accent font-ancient mt-1">
+                    限时仙缘价
+                  </div>
+                </div>
+                <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-primary/20 rounded-full mystic-glow">
+                  <span class="iconify text-primary text-4xl i68dze" data-icon="heroicons:sparkles" data-width="48" id="i68dze-2-2"></span>
+                </div>
+                <h3 id="i0pwvc-3-2" class="card-title text-2xl font-ancient text-ancient-gold justify-center mb-4 i0pwvc">
+                  XXX手串
+                </h3>
+                <p class="text-base-content/80 mb-6 leading-relaxed">
+                  预测未来，洞悉因果。运用古老智慧与现代科技，为你揭示命运玄机。
+                </p>
+                <div class="card-actions justify-center">
+                  <button class="btn btn-outline btn-primary font-ancient">
+                    探寻更多
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- 经卷符箓 Card -->
+            <div data-repeatable="true" data-type="value-card" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;knowledge_base&#39;)">
+              <div id="i2y4u9-2-3" class="card-body text-center p-8 i2y4u9">
+                <!-- 图片展示框 -->
+                <div class="w-full h-48 mb-4 rounded-lg overflow-hidden shadow-scroll">
+                  <img alt="古代符箓 - 神秘的道教符箓卷轴，蕴含千年道学精华" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/280x192.png?text=Ancient+Talisman+Scroll">
+                </div>
+                <!-- 价格信息 -->
+                <div class="mb-6 text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <span class="text-2xl font-ancient text-ancient-gold font-bold">¥1288</span><span class="text-sm text-base-content/60 line-through">¥1888</span>
+                  </div>
+                  <div class="text-xs text-accent font-ancient mt-1">
+                    限时仙缘价
+                  </div>
+                </div>
+                <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-secondary/20 rounded-full mystic-glow">
+                  <span class="iconify text-secondary text-4xl" data-icon="heroicons:book-open" data-width="48"></span>
+                </div>
+                <h3 id="i05co2-3-2" class="card-title text-2xl font-ancient text-ancient-gold justify-center mb-4 i05co2">
+                  符箓
+                </h3>
+                <p id="ixnzeo-2-3" class="text-base-content/80 mb-6 leading-relaxed ixnzeo">
+                  汇集千年道学精华，收录古籍秘典。让智慧之光照亮求道之路。
+                </p>
+                <div class="card-actions justify-center">
+                  <button class="btn btn-outline btn-secondary font-ancient">
+                    探寻更多
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- 文化藏品 Card -->
+            <div data-repeatable="true" data-type="value-card" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;cultural_shop&#39;)">
+              <div id="i3nmbv-2-3" class="card-body text-center p-8 i3nmbv">
+                <!-- 图片展示框 -->
+                <div class="w-full h-48 mb-4 rounded-lg overflow-hidden shadow-scroll">
+                  <img alt="雷击木 - 天然雷击木制品，蕴含天地灵气与神秘力量" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/280x192.png?text=Lightning+Strike+Wood+Artifact">
+                </div>
+                <!-- 价格信息 -->
+                <div class="mb-6 text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <span class="text-2xl font-ancient text-ancient-gold font-bold">¥2888</span><span class="text-sm text-base-content/60 line-through">¥3888</span>
+                  </div>
+                  <div class="text-xs text-accent font-ancient mt-1">
+                    限时仙缘价
+                  </div>
+                </div>
+                <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-accent/20 rounded-full mystic-glow">
+                  <span class="iconify text-accent text-4xl" data-icon="heroicons:gift" data-width="48"></span>
+                </div>
+                <h3 id="i90kez-3-2" class="card-title text-2xl font-ancient text-ancient-gold justify-center mb-4 i90kez">
+                  雷击木
+                </h3>
+                <p class="text-base-content/80 mb-6 leading-relaxed">
+                  珍藏东方文化瑰宝，传承千年匠心工艺。让文化之美融入生活。
+                </p>
+                <div class="card-actions justify-center">
+                  <button class="btn btn-outline btn-accent font-ancient">
+                    探寻更多
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="value_proposition_section-3-2" class="py-24 bg-base-200 paper-texture value_proposition_section value_proposition_section-3-2 spark-custom-value_proposition_section-3-2">
+        <div id="ilect8" class="container mx-auto px-8 i9bst7">
+          <h2 id="i3mj52-3-2" class="text-4xl md:text-5xl font-ancient text-ancient-gold text-center mb-16 mystic-glow i3mj52 i3mj52-3-2 spark-custom-i3mj52-3-2">
+            How do we perform the consecration ceremony
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+            <!-- AI道法 Card -->
+            <div data-repeatable="true" data-type="value-card" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;divination_chat&#39;)">
+              <div id="i5dtif-2-2" class="card-body text-center p-8 i5dtif">
+                <!-- 图片展示框 -->
+                <div class="w-full h-48 mb-4 rounded-lg overflow-hidden shadow-scroll">
+                  <img alt="传统手串 - 精美的佛珠手链，蕴含古老智慧与神秘力量" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 ijffgi" id="ijffgi-2-2" data-src="placehold.co/280x192.png?text=Traditional+Prayer+Beads+Bracelet">
+                </div>
+                <!-- 价格信息 -->
+                <div class="mb-6 text-center"></div>
+                <p id="ihl9zl" class="text-base-content/80 mb-6 leading-relaxed ihl9zl spark-custom-ihl9zl">
+                  预测未来，洞悉因果。运用古老智慧与现代科技，为你揭示命运玄机。
+                </p>
+                <div class="card-actions justify-center"></div>
+              </div>
+            </div>
+            <!-- 经卷符箓 Card -->
+            <div data-repeatable="true" data-type="value-card" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;knowledge_base&#39;)">
+              <div id="i2y4u9-2-2" class="card-body text-center p-8 i2y4u9">
+                <!-- 图片展示框 -->
+                <div class="w-full h-48 mb-4 rounded-lg overflow-hidden shadow-scroll">
+                  <img alt="古代符箓 - 神秘的道教符箓卷轴，蕴含千年道学精华" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/280x192.png?text=Ancient+Talisman+Scroll">
+                </div>
+                <!-- 价格信息 -->
+                <div class="mb-6 text-center">
+                  <div class="flex items-center justify-center gap-2"></div>
+                </div>
+                <p id="ixnzeo-2-2" class="text-base-content/80 mb-6 leading-relaxed ixnzeo ixnzeo-2-2 spark-custom-ixnzeo-2-2">
+                  汇集千年道学精华，收录古籍秘典。让智慧之光照亮求道之路。
+                </p>
+                <div class="card-actions justify-center"></div>
+              </div>
+            </div>
+            <!-- 文化藏品 Card -->
+            <div data-repeatable="true" data-type="value-card" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;cultural_shop&#39;)">
+              <div id="i3nmbv-2-2" class="card-body text-center p-8 i3nmbv">
+                <!-- 图片展示框 -->
+                <div class="w-full h-48 mb-4 rounded-lg overflow-hidden shadow-scroll">
+                  <img alt="雷击木 - 天然雷击木制品，蕴含天地灵气与神秘力量" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 i7fu6y spark-custom-i7fu6y" id="i7fu6y" data-src="placehold.co/280x192.png?text=Lightning+Strike+Wood+Artifact">
+                </div>
+                <!-- 价格信息 -->
+                <div class="mb-6 text-center">
+                  <div class="flex items-center justify-center gap-2"></div>
+                </div>
+                <p id="idneu1" class="text-base-content/80 mb-6 leading-relaxed idneu1 spark-custom-idneu1">
+                  珍藏东方文化瑰宝，传承千年匠心工艺。让文化之美融入生活。
+                </p>
+                <div class="card-actions justify-center"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="value_proposition_section-3-2-2" class="py-24 bg-base-200 paper-texture value_proposition_section">
+        <div id="i8pevm" class="container mx-auto px-8 i9bst7">
+          <h2 id="i3mj52-3-2-2" class="text-4xl md:text-5xl font-ancient text-ancient-gold text-center mb-16 mystic-glow i3mj52 i3mj52-3-2-2 spark-custom-i3mj52-3-2-2">
+            Share your story with the treasure
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+            <!-- AI道法 Card -->
+            <div data-repeatable="true" data-type="value-card" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;divination_chat&#39;)">
+              <div id="i5dtif-2-2-2" class="card-body text-center p-8 i5dtif">
+                <!-- 图片展示框 -->
+                <div class="w-full h-48 mb-4 rounded-lg overflow-hidden shadow-scroll">
+                  <img alt="传统手串 - 精美的佛珠手链，蕴含古老智慧与神秘力量" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 ijffgi" id="ijffgi-2-2-2" data-src="placehold.co/280x192.png?text=Traditional+Prayer+Beads+Bracelet">
+                </div>
+                <!-- 价格信息 -->
+                <div class="mb-6 text-center"></div>
+                <p id="iwki94" class="text-base-content/80 mb-6 leading-relaxed ihl9zl iwki94 spark-custom-iwki94">
+                  预测未来，洞悉因果。运用古老智慧与现代科技，为你揭示命运玄机。
+                </p>
+                <div class="card-actions justify-center"></div>
+              </div>
+            </div>
+            <!-- 经卷符箓 Card -->
+            <div data-repeatable="true" data-type="value-card" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;knowledge_base&#39;)">
+              <div id="i2y4u9-2-2-2" class="card-body text-center p-8 i2y4u9">
+                <!-- 图片展示框 -->
+                <div class="w-full h-48 mb-4 rounded-lg overflow-hidden shadow-scroll">
+                  <img alt="古代符箓 - 神秘的道教符箓卷轴，蕴含千年道学精华" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/280x192.png?text=Ancient+Talisman+Scroll">
+                </div>
+                <!-- 价格信息 -->
+                <div class="mb-6 text-center">
+                  <div class="flex items-center justify-center gap-2"></div>
+                </div>
+                <p id="ixnzeo-2-2-2" class="text-base-content/80 mb-6 leading-relaxed ixnzeo">
+                  汇集千年道学精华，收录古籍秘典。让智慧之光照亮求道之路。
+                </p>
+                <div class="card-actions justify-center"></div>
+              </div>
+            </div>
+            <!-- 文化藏品 Card -->
+            <div data-repeatable="true" data-type="value-card" class="card bg-base-100 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-2 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;cultural_shop&#39;)">
+              <div id="i3nmbv-2-2-2" class="card-body text-center p-8 i3nmbv">
+                <!-- 图片展示框 -->
+                <div class="w-full h-48 mb-4 rounded-lg overflow-hidden shadow-scroll">
+                  <img alt="雷击木 - 天然雷击木制品，蕴含天地灵气与神秘力量" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 i7fu6y" id="imzg8s" data-src="placehold.co/280x192.png?text=Lightning+Strike+Wood+Artifact">
+                </div>
+                <!-- 价格信息 -->
+                <div class="mb-6 text-center">
+                  <div class="flex items-center justify-center gap-2"></div>
+                </div>
+                <p id="ia0xpr" class="text-base-content/80 mb-6 leading-relaxed idneu1">
+                  珍藏东方文化瑰宝，传承千年匠心工艺。让文化之美融入生活。
+                </p>
+                <div class="card-actions justify-center"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="value_proposition_section-2" class="py-24 bg-base-200 paper-texture value_proposition_section value_proposition_section-2 spark-custom-value_proposition_section-2">
+        <div class="container mx-auto px-8">
+          <div class="flex items-center justify-center">
+            <div class="w-full max-w-4xl">
+              <div id="it8o33" class="bg-base-100 rounded-lg shadow-scroll ancient-container overflow-hidden it8o33 spark-custom-it8o33">
+                <img alt="古老神秘风景 - 崂山仙境中的神秘景观，展现道教文化的深邃意境" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300" data-src="placehold.co/800x450.png?text=Ancient+Mystical+Landscape+View"><!-- 文字框 -->
+                <div class="p-8">
+                  <div class="text-center mb-6">
+                    <h3 id="iz44e9" class="text-2xl font-ancient text-ancient-gold mb-4 mystic-glow iz44e9 spark-custom-iz44e9">
+                      Join our journey of public welfare
+                    </h3>
+                    <p class="text-base-content/80 leading-relaxed mb-4">
+                      踏入崂山仙境，感受千年道学文化的深邃魅力。这里汇聚了古老的智慧与神秘的力量，
+                      每一处风景都蕴含着深刻的道教哲理，每一缕清风都诉说着仙人的传说。
+                    </p>
+                    <p class="text-base-content/70 leading-relaxed">
+                      在这片神圣的土地上，您将体验到前所未有的心灵净化与精神升华，
+                      让古老的道法指引您走向内心的平静与智慧的觉醒。
+                    </p>
+                  </div>
+                  <!-- Read More 按钮 -->
+                  <div class="text-center">
+                    <button class="btn btn-primary btn-lg font-ancient mystic-glow hover:scale-105 transition-all duration-300">
+                      <span class="iconify mr-2" data-icon="heroicons:book-open" data-width="20"></span>
+                      Read More
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="value_proposition_section-2-2" class="py-24 bg-base-200 paper-texture value_proposition_section value_proposition_section-2-2 spark-custom-value_proposition_section-2-2">
+        <div class="container mx-auto px-8">
+          <div class="flex items-center justify-center">
+            <div class="w-full max-w-4xl">
+              <div id="it8o33-2" class="bg-base-100 rounded-lg shadow-scroll ancient-container overflow-hidden it8o33">
+                <img alt="古老神秘风景 - 崂山仙境中的神秘景观，展现道教文化的深邃意境" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300 iiy03f spark-custom-iiy03f" id="iiy03f" data-src="placehold.co/800x450.png?text=Ancient+Mystical+Landscape+View"><!-- 文字框 -->
+                <div class="p-8">
+                  <div class="text-center mb-6">
+                    <h3 id="irl722" class="text-2xl font-ancient text-ancient-gold mb-4 mystic-glow iz44e9">
+                      崂山仙境探秘
+                    </h3>
+                    <p class="text-base-content/80 leading-relaxed mb-4">
+                      踏入崂山仙境，感受千年道学文化的深邃魅力。这里汇聚了古老的智慧与神秘的力量，
+                      每一处风景都蕴含着深刻的道教哲理，每一缕清风都诉说着仙人的传说。
+                    </p>
+                    <p class="text-base-content/70 leading-relaxed">
+                      在这片神圣的土地上，您将体验到前所未有的心灵净化与精神升华，
+                      让古老的道法指引您走向内心的平静与智慧的觉醒。
+                    </p>
+                  </div>
+                  <!-- Read More 按钮 -->
+                  <div class="text-center">
+                    <button class="btn btn-primary btn-lg font-ancient mystic-glow hover:scale-105 transition-all duration-300">
+                      <span class="iconify mr-2" data-icon="heroicons:book-open" data-width="20"></span>
+                      Read More
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Feature Preview Section -->
+      <section id="feature_preview_section" class="py-24 bg-base-100 feature_preview_section spark-custom-feature_preview_section">
+        <div id="irnfwf" class="container mx-auto px-8 irnfwf spark-custom-irnfwf">
+          <h2 class="text-4xl md:text-5xl font-ancient text-ancient-gold text-center mb-4 mystic-glow">
+            奇门遁甲，道法自然
+          </h2>
+          <p class="text-xl text-base-content/70 text-center mb-16 font-ancient">
+            体验核心功能，开启修仙之旅
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- AI占卜 Feature Card -->
+            <div data-repeatable="true" data-type="feature-card" class="card bg-base-200 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-1 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;divination_chat&#39;)">
+              <div id="irinfs" class="card-body text-center p-6 irinfs spark-custom-irinfs">
+                <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-primary/10 rounded-full">
+                  <span class="iconify text-primary text-3xl" data-icon="heroicons:eye" data-width="32"></span>
+                </div>
+                <h3 class="card-title text-xl font-ancient text-primary justify-center mb-3">
+                  AI占卜
+                </h3>
+                <p class="text-base-content/70 text-sm mb-4">
+                  智能预测，洞察未来
+                </p>
+                <div class="card-actions justify-center">
+                  <button class="btn btn-primary btn-sm font-ancient">
+                    立即体验
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- 知识库 Feature Card -->
+            <div data-repeatable="true" data-type="feature-card" class="card bg-base-200 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-1 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;knowledge_base&#39;)">
+              <div id="i5tezt" class="card-body text-center p-6 i5tezt spark-custom-i5tezt">
+                <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-secondary/10 rounded-full">
+                  <span class="iconify text-secondary text-3xl" data-icon="heroicons:academic-cap" data-width="32"></span>
+                </div>
+                <h3 id="iwhby3" class="card-title text-xl font-ancient text-secondary justify-center mb-3 iwhby3 spark-custom-iwhby3">
+                  藏经阁
+                </h3>
+                <p id="ig7opi" class="text-base-content/70 text-sm mb-4 ig7opi spark-custom-ig7opi">
+                  道学精华，智慧宝库
+                </p>
+                <div class="card-actions justify-center">
+                  <button class="btn btn-secondary btn-sm font-ancient">
+                    立即体验
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- 文化专区 Feature Card -->
+            <div data-repeatable="true" data-type="feature-card" class="card bg-base-200 shadow-scroll hover:shadow-ancient cursor-pointer transform hover:-translate-y-1 transition-all duration-300 ancient-container" onclick="navigateTo(&#39;cultural_shop&#39;)">
+              <div id="ic4pmj" class="card-body text-center p-6 ic4pmj spark-custom-ic4pmj">
+                <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-accent/10 rounded-full">
+                  <span class="iconify text-accent text-3xl" data-icon="heroicons:building-storefront" data-width="32"></span>
+                </div>
+                <h3 id="izxfl9" class="card-title text-xl font-ancient text-accent justify-center mb-3 izxfl9 spark-custom-izxfl9">
+                  神秘仪式
+                </h3>
+                <p class="text-base-content/70 text-sm mb-4">
+                  文化瑰宝，匠心传承
+                </p>
+                <div class="card-actions justify-center">
+                  <button class="btn btn-accent btn-sm font-ancient">
+                    立即体验
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Footer -->
+    <div class="footer-wrapper"><div data-section-id="common_footer" data-section-type="common_footer">
+  <footer class="bg-base-200 border-t border-primary/20 paper-texture">
+    <!-- Main footer content -->
+    <div id="imtjx4" class="footer p-10 text-base-content imtjx4 spark-custom-imtjx4 imtjx4">
+      <aside class="flex flex-col items-start">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center border border-primary/30 mystic-glow">
+            <span class="iconify text-primary" data-icon="heroicons:sparkles" data-width="24"></span>
+          </div>
+          <div>
+            <span class="text-xl font-ancient text-ancient-gold">OracleNet</span>
+            <div class="text-sm text-base-content/70 font-ancient">
+              崂山玄境
+            </div>
+          </div>
+        </div>
+        <p class="text-sm text-base-content/80 max-w-sm font-ancient">
+          探索东方神秘主义的数字朝圣之旅<br>
+          寻访山中道士，解惑人生迷津
+        </p>
+      </aside>
+      <nav>
+        <header class="footer-title font-ancient text-primary">探索之旅</header>
+        <a class="link link-hover font-ancient focus-primary" onclick="navigateTo(&#39;home&#39;)">山门初启</a><a class="link link-hover font-ancient focus-primary" onclick="navigateTo(&#39;divination_chat&#39;)">问道于观</a><a class="link link-hover font-ancient focus-primary" onclick="navigateTo(&#39;knowledge_base&#39;)">藏经阁</a><a class="link link-hover font-ancient focus-primary" onclick="navigateTo(&#39;cultural_shop&#39;)">百宝轩</a>
+      </nav>
+      <nav>
+        <header class="footer-title font-ancient text-primary">道友服务</header>
+        <a class="link link-hover font-ancient focus-primary" onclick="navigateTo(&#39;user_account&#39;)">个人账户</a><a class="link link-hover font-ancient focus-primary" onclick="navigateTo(&#39;settings&#39;)">设置</a><a class="link link-hover font-ancient focus-primary" onclick="navigateTo(&#39;login_signup&#39;)">登录注册</a><a class="link link-hover font-ancient focus-primary">帮助中心</a>
+      </nav>
+      <nav>
+        <header class="footer-title font-ancient text-primary">法律条文</header>
+        <a class="link link-hover font-ancient focus-primary" onclick="navigateTo(&#39;legal_disclaimer&#39;)">免责声明</a><a class="link link-hover font-ancient focus-primary">隐私政策</a><a class="link link-hover font-ancient focus-primary">服务条款</a><a class="link link-hover font-ancient focus-primary i59q6f spark-custom-i59q6f" id="i59q6f">联系我们</a>
+      </nav>
+      <nav>
+        <header class="footer-title font-ancient text-primary">文化传承</header>
+        <div class="grid grid-flow-col gap-4">
+          <a aria-label="微信" class="link link-hover focus-primary mystic-glow"><span class="iconify text-primary hover:text-secondary" data-icon="simple-icons:wechat" data-width="24"></span></a><a aria-label="微博" class="link link-hover focus-primary mystic-glow"><span class="iconify text-primary hover:text-secondary" data-icon="simple-icons:sinaweibo" data-width="24"></span></a><a aria-label="抖音" class="link link-hover focus-primary mystic-glow"><span class="iconify text-primary hover:text-secondary" data-icon="simple-icons:tiktok" data-width="24"></span></a><a aria-label="哔哩哔哩" class="link link-hover focus-primary mystic-glow"><span class="iconify text-primary hover:text-secondary iemqqi spark-custom-iemqqi" data-icon="simple-icons:bilibili" data-width="24" id="iemqqi"></span></a>
+        </div>
+        <div class="mt-4 p-3 bg-base-300/50 rounded-lg border border-primary/20">
+          <div class="text-xs text-base-content/70 font-ancient mb-1">
+            本站服务仅供娱乐
+          </div>
+          <div class="text-xs text-base-content/50 font-ancient">
+            请理性对待占卜结果
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- Copyright section with stone inscription styling -->
+    <div class="footer-center p-6 bg-base-300/50 text-base-content border-t border-primary/20">
+      <aside id="ikdygb" class="text-center ikdygb spark-custom-ikdygb">
+        <div class="ancient-container p-4 max-w-4xl mx-auto">
+          <p class="font-ancient text-sm text-base-content/80">
+            © 2024 OracleNet - 崂山玄境. 版权所有 |
+            <span class="text-primary">东方神秘主义数字体验平台</span>
+          </p>
+          <p class="text-xs text-base-content/60 mt-2 font-ancient">
+            技术支持: support@oraclenet.com | 文化顾问: 崂山道教文化研究院 |
+            ICP备案号: 鲁ICP备2024000001号
+          </p>
+          <div class="mt-3 flex justify-center gap-4 text-xs text-base-content/50 font-ancient">
+            <span>道德经第一章: 道可道，非常道</span><span>|</span><span>《易经》: 一阴一阳之谓道</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </footer>
+</div>
+</div>
+    <script>
+(function() {
+&#39;use strict&#39;;
+
+// Initialize global app namespace
+window.APP_GLOBALS = window.APP_GLOBALS || {};
+
+// Global navigation utility
+window.navigateTo = function(targetPageId) {
+const isInIframe = window.self !== window.top;
+const targetFileName = `${targetPageId}.html`;
+
+if (isInIframe) {
+window.parent.postMessage({
+type: &#39;iframeNavigation&#39;,
+targetPageId: targetPageId
+}, &#39;*&#39;);
+} else {
+window.location.href = targetFileName;
+}
+};
+
+// Sidebar collapse/expand utility with ancient scroll animation
+window.toggleSidebar = function() {
+const sidebar = document.querySelector(&#39;[data-section-id="common_sidebar"]&#39;);
+if (!sidebar) return;
+
+const isCollapsed = sidebar.classList.contains(&#39;sidebar-collapsed&#39;);
+const sidebar_content = sidebar.querySelector(&#39;.sidebar-content&#39;);
+
+if (isCollapsed) {
+sidebar.classList.remove(&#39;sidebar-collapsed&#39;);
+sidebar.classList.add(&#39;sidebar-expanded&#39;);
+if (sidebar_content) {
+sidebar_content.style.opacity = &#39;0&#39;;
+setTimeout(() => {
+sidebar_content.style.opacity = &#39;1&#39;;
+}, 150);
+}
+localStorage.setItem(&#39;sidebarState&#39;, &#39;expanded&#39;);
+} else {
+sidebar.classList.remove(&#39;sidebar-expanded&#39;);
+sidebar.classList.add(&#39;sidebar-collapsed&#39;);
+localStorage.setItem(&#39;sidebarState&#39;, &#39;collapsed&#39;);
+}
+};
+
+// Initialize sidebar state from localStorage
+window.initSidebarState = function() {
+const savedState = localStorage.getItem(&#39;sidebarState&#39;) || &#39;expanded&#39;;
+const sidebar = document.querySelector(&#39;[data-section-id="common_sidebar"]&#39;);
+if (sidebar) {
+sidebar.classList.add(savedState === &#39;collapsed&#39; ? &#39;sidebar-collapsed&#39; : &#39;sidebar-expanded&#39;);
+}
+};
+
+// Enhanced notification utilities with mystical styling
+window.showNotification = function(message, type = &#39;info&#39;) {
+const iconMap = {
+info: &#39;heroicons:information-circle&#39;,
+success: &#39;heroicons:check-circle&#39;,
+warning: &#39;heroicons:exclamation-triangle&#39;,
+error: &#39;heroicons:x-circle&#39;
+};
+
+const notification = document.createElement(&#39;div&#39;);
+notification.className = `alert alert-${type} fixed top-4 right-4 w-96 z-50 shadow-ancient mystic-glow`;
+notification.innerHTML = `
+<div class="flex items-center gap-3">
+<span class="iconify text-ancient-gold" data-icon="${iconMap[type]}" data-width="24"></span>
+<span class="text-base-content">${message}</span>
+</div>
+`;
+
+document.body.appendChild(notification);
+
+// Add entrance animation
+notification.style.transform = &#39;translateX(100%)&#39;;
+notification.style.opacity = &#39;0&#39;;
+setTimeout(() => {
+notification.style.transform = &#39;translateX(0)&#39;;
+notification.style.opacity = &#39;1&#39;;
+notification.style.transition = &#39;all 0.3s ease-out&#39;;
+}, 10);
+
+// Auto remove after 5 seconds
+setTimeout(() => {
+notification.style.transform = &#39;translateX(100%)&#39;;
+notification.style.opacity = &#39;0&#39;;
+setTimeout(() => {
+if (notification.parentNode) {
+notification.remove();
+}
+}, 300);
+}, 5000);
+};
+
+// Ancient scroll loading animation utility
+window.showScrollLoading = function(container) {
+if (!container) return;
+
+const loadingElement = document.createElement(&#39;div&#39;);
+loadingElement.className = &#39;flex items-center justify-center p-8&#39;;
+loadingElement.innerHTML = `
+<div class="flex flex-col items-center gap-4">
+<div class="w-16 h-16 border-4 border-primary/30 border-t-primary rounded-full animate-spin mystic-glow"></div>
+<span class="text-base-content/70 font-ancient">正在占卜中...</span>
+</div>
+`;
+container.appendChild(loadingElement);
+return loadingElement;
+};
+
+// Initialize mystical effects on elements
+window.initMysticalEffects = function() {
+// Add hover effects to interactive elements
+const interactiveElements = document.querySelectorAll(&#39;button, .btn, a[onclick], .card&#39;);
+interactiveElements.forEach(element => {
+element.addEventListener(&#39;mouseenter&#39;, function() {
+if (!this.disabled) {
+this.style.transition = &#39;all 0.2s ease-out&#39;;
+this.style.transform = &#39;translateY(-1px)&#39;;
+}
+});
+element.addEventListener(&#39;mouseleave&#39;, function() {
+this.style.transform = &#39;translateY(0)&#39;;
+});
+});
+
+// Add click ripple effect
+const clickableElements = document.querySelectorAll(&#39;button, .btn&#39;);
+clickableElements.forEach(element => {
+element.addEventListener(&#39;click&#39;, function(e) {
+if (this.disabled) return;
+
+const ripple = document.createElement(&#39;span&#39;);
+const rect = this.getBoundingClientRect();
+const size = Math.max(rect.width, rect.height);
+const x = e.clientX - rect.left - size / 2;
+const y = e.clientY - rect.top - size / 2;
+
+ripple.style.width = ripple.style.height = size + &#39;px&#39;;
+ripple.style.left = x + &#39;px&#39;;
+ripple.style.top = y + &#39;px&#39;;
+ripple.className = &#39;absolute rounded-full bg-primary/20 animate-ping pointer-events-none&#39;;
+
+this.style.position = &#39;relative&#39;;
+this.style.overflow = &#39;hidden&#39;;
+this.appendChild(ripple);
+
+setTimeout(() => {
+if (ripple.parentNode) {
+ripple.remove();
+}
+}, 600);
+});
+});
+};
+
+// Theme management for dark/light toggle if needed
+window.APP_GLOBALS.themeManager = {
+getCurrentTheme: function() {
+return localStorage.getItem(&#39;theme&#39;) || &#39;business&#39;;
+},
+setTheme: function(theme) {
+document.documentElement.setAttribute(&#39;data-theme&#39;, theme);
+localStorage.setItem(&#39;theme&#39;, theme);
+}
+};
+
+// Initialize components when DOM is loaded
+document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+initSidebarState();
+initMysticalEffects();
+
+// Set initial theme
+const currentTheme = window.APP_GLOBALS.themeManager.getCurrentTheme();
+window.APP_GLOBALS.themeManager.setTheme(currentTheme);
+});
+
+})();
+</script><script>
+(function() {
+    &#39;use strict&#39;;
+
+    // Initialize home page specific functionality
+    function initHomePage() {
+        // Video loading handler
+        const heroVideo = document.querySelector(&#39;#home_hero_section video&#39;);
+        if (heroVideo) {
+            heroVideo.addEventListener(&#39;loadeddata&#39;, function() {
+                this.classList.add(&#39;loaded&#39;);
+            });
+            
+            // Fallback for video loading
+            setTimeout(() => {
+                if (!heroVideo.classList.contains(&#39;loaded&#39;)) {
+                    heroVideo.classList.add(&#39;loaded&#39;);
+                }
+            }, 2000);
+        }
+
+        // Enhanced card hover effects
+        const cards = document.querySelectorAll(&#39;.card&#39;);
+        cards.forEach(card => {
+            card.addEventListener(&#39;mouseenter&#39;, function() {
+                this.style.transform = &#39;translateY(-4px) scale(1.02)&#39;;
+                this.style.transition = &#39;all 0.3s cubic-bezier(0.4, 0, 0.2, 1)&#39;;
+            });
+            
+            card.addEventListener(&#39;mouseleave&#39;, function() {
+                this.style.transform = &#39;translateY(0) scale(1)&#39;;
+            });
+        });
+
+        // CTA button enhanced effects
+        const ctaButton = document.querySelector(&#39;#home_hero_section .btn-primary&#39;);
+        if (ctaButton) {
+            ctaButton.addEventListener(&#39;mouseenter&#39;, function() {
+                this.style.boxShadow = &#39;0 0 40px rgba(218, 165, 32, 0.6), 0 0 60px rgba(218, 165, 32, 0.3)&#39;;
+                this.style.transform = &#39;translateY(-2px) scale(1.05)&#39;;
+            });
+            
+            ctaButton.addEventListener(&#39;mouseleave&#39;, function() {
+                this.style.boxShadow = &#39;0 0 20px rgba(218, 165, 32, 0.3)&#39;;
+                this.style.transform = &#39;translateY(0) scale(1)&#39;;
+            });
+        }
+
+        // Parallax effect for sections (subtle)
+        window.addEventListener(&#39;scroll&#39;, function() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll(&#39;.paper-texture&#39;);
+            
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                const yPos = -(scrolled * speed);
+                element.style.backgroundPosition = `center ${yPos}px`;
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: &#39;0px 0px -50px 0px&#39;
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = &#39;1&#39;;
+                    entry.target.style.transform = &#39;translateY(0)&#39;;
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for scroll animations
+        const sections = document.querySelectorAll(&#39;#value_proposition_section, #feature_preview_section&#39;);
+        sections.forEach(section => {
+            section.style.opacity = &#39;0&#39;;
+            section.style.transform = &#39;translateY(30px)&#39;;
+            section.style.transition = &#39;all 0.8s cubic-bezier(0.4, 0, 0.2, 1)&#39;;
+            observer.observe(section);
+});
+
+        // 书籍展示区域特效初始化
+        initBookDisplayEffects();
+    }
+
+    // 书籍展示区域特效
+    function initBookDisplayEffects() {
+        // 分类按钮点击波纹效果
+        const categoryButtons = document.querySelectorAll(&#39;#value_proposition_section .space-y-3 .btn&#39;);
+        categoryButtons.forEach(button => {
+            button.addEventListener(&#39;click&#39;, function(e) {
+                const ripple = document.createElement(&#39;span&#39;);
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.width = ripple.style.height = size + &#39;px&#39;;
+                ripple.style.left = x + &#39;px&#39;;
+                ripple.style.top = y + &#39;px&#39;;
+                ripple.className = &#39;absolute rounded-full bg-white/30 animate-ping pointer-events-none&#39;;
+
+                this.style.position = &#39;relative&#39;;
+                this.style.overflow = &#39;hidden&#39;;
+                this.appendChild(ripple);
+
+                setTimeout(() => {
+                    if (ripple.parentNode) {
+                        ripple.remove();
+                    }
+                }, 600);
+            });
+        });
+
+        // 推荐榜单悬停音效模拟
+        const recommendItems = document.querySelectorAll(&#39;#value_proposition_section .space-y-4 > div&#39;);
+        recommendItems.forEach((item, index) => {
+            item.addEventListener(&#39;mouseenter&#39;, function() {
+                this.style.transform = &#39;translateX(4px)&#39;;
+                this.style.transition = &#39;transform 0.2s ease&#39;;
+                
+                // 添加轻微的发光效果
+                const rankNumber = this.querySelector(&#39;.w-12.h-16&#39;);
+                if (rankNumber) {
+                    rankNumber.style.boxShadow = &#39;0 0 15px currentColor&#39;;
+                }
+            });
+
+            item.addEventListener(&#39;mouseleave&#39;, function() {
+                this.style.transform = &#39;translateX(0)&#39;;
+                
+                const rankNumber = this.querySelector(&#39;.w-12.h-16&#39;);
+                if (rankNumber) {
+                    rankNumber.style.boxShadow = &#39;inset 0 1px 0 rgba(255, 255, 255, 0.2)&#39;;
+                }
+            });
+        });
+
+        // 主图片悬停效果增强
+        const mainImage = document.querySelector(&#39;#value_proposition_section img&#39;);
+        if (mainImage) {
+            mainImage.addEventListener(&#39;mouseenter&#39;, function() {
+                this.style.transform = &#39;scale(1.05) rotate(0.5deg)&#39;;
+            });
+
+            mainImage.addEventListener(&#39;mouseleave&#39;, function() {
+                this.style.transform = &#39;scale(1) rotate(0deg)&#39;;
+            });
+        }
+
+        // 操作按钮增强效果
+        const actionButtons = document.querySelectorAll(&#39;#value_proposition_section .flex.gap-6 .btn&#39;);
+        actionButtons.forEach(button => {
+            button.addEventListener(&#39;mouseenter&#39;, function() {
+                this.style.boxShadow = &#39;0 0 30px currentColor, 0 8px 16px rgba(0,0,0,0.2)&#39;;
+                this.style.transform = &#39;translateY(-3px) scale(1.05)&#39;;
+            });
+
+            button.addEventListener(&#39;mouseleave&#39;, function() {
+                this.style.boxShadow = &#39;0 0 20px rgba(218, 165, 32, 0.3)&#39;;
+                this.style.transform = &#39;translateY(0) scale(1)&#39;;
+            });
+        });
+    }
+
+    // Navigation handlers for home page
+    function handleNavigation(targetPageId) {
+        // Add loading state before navigation
+        const loadingOverlay = document.createElement(&#39;div&#39;);
+        loadingOverlay.className = &#39;fixed inset-0 bg-base-100/80 flex items-center justify-center z-50&#39;;
+        loadingOverlay.innerHTML = `
+            <div class="flex flex-col items-center gap-4">
+                <div class="w-16 h-16 border-4 border-primary/30 border-t-primary rounded-full animate-spin mystic-glow"></div>
+                <span class="text-base-content font-ancient">正在进入仙境...</span>
+            </div>
+        `;
+        
+        document.body.appendChild(loadingOverlay);
+        
+        // Navigate after brief delay for smooth transition
+        setTimeout(() => {
+            navigateTo(targetPageId);
+        }, 800);
+    }
+
+    // Enhanced click handlers for cards
+    function initCardClickHandlers() {
+        const valueCards = document.querySelectorAll(&#39;[data-type="value-card"]&#39;);
+        const featureCards = document.querySelectorAll(&#39;[data-type="feature-card"]&#39;);
+        
+        valueCards.forEach(card => {
+            card.addEventListener(&#39;click&#39;, function() {
+                const targetPage = this.getAttribute(&#39;onclick&#39;).match(/&#39;([^&#39;]+)&#39;/)[1];
+                handleNavigation(targetPage);
+            });
+        });
+        
+        featureCards.forEach(card => {
+            card.addEventListener(&#39;click&#39;, function() {
+                const targetPage = this.getAttribute(&#39;onclick&#39;).match(/&#39;([^&#39;]+)&#39;/)[1];
+                handleNavigation(targetPage);
+            });
+        });
+    }
+
+    // Initialize everything when DOM is loaded
+    document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+        initHomePage();
+        initCardClickHandlers();
+        
+        // Show welcome notification
+        setTimeout(() => {
+            showNotification(&#39;欢迎来到崂山仙境，愿您在此寻得心中所求&#39;, &#39;info&#39;);
+        }, 1500);
+    });
+
+    // Handle page visibility changes for video optimization
+    document.addEventListener(&#39;visibilitychange&#39;, function() {
+        const heroVideo = document.querySelector(&#39;#home_hero_section video&#39;);
+        if (heroVideo) {
+            if (document.hidden) {
+                heroVideo.pause();
+            } else {
+                heroVideo.play();
+            }
+        }
+    });
+
+})();
+</script>
+  
+
+<script>
+    setTimeout(() => {
+      Holder.run({
+        domain: "placehold.co"
+      })
+    }, 100)
+  </script></body></html>
